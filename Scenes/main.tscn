@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://e7tmn0b0ho0w"]
+[gd_scene load_steps=6 format=3 uid="uid://e7tmn0b0ho0w"]
 
-[ext_resource type="PackedScene" uid="uid://b435oqniqce3h" path="res://Prefabs/Player/player.tscn" id="1_ig7tw"]
-[ext_resource type="Texture2D" uid="uid://d1ltfpggjtx13" path="res://chica.png" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bvbnwqafnvyo3" path="res://ocean_env.tscn" id="1_8gbba"]
+[ext_resource type="PackedScene" uid="uid://b435oqniqce3h" path="res://Prefabs/Player/player.tscn" id="2_jjvhh"]
+[ext_resource type="Texture2D" uid="uid://d1ltfpggjtx13" path="res://chica.png" id="3_kry3j"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7dm0k"]
 size = Vector3(100, 1, 100)
@@ -11,6 +12,9 @@ size = Vector3(100, 1, 100)
 
 [node name="StaticBody3D" type="StaticBody3D"]
 
+[node name="OceanEnv" parent="." instance=ExtResource("1_8gbba")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.016212702, 0)
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_7dm0k")
 skeleton = NodePath("")
@@ -18,13 +22,13 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_ig7tw")
 
-[node name="Player" parent="." instance=ExtResource("1_ig7tw")]
+[node name="Player" parent="." instance=ExtResource("2_jjvhh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2300951, 0)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.301638, 0)
 billboard = 2
-texture = ExtResource("2_0xm2m")
+texture = ExtResource("3_kry3j")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.09426473, 0.9955472, 0, -0.9955472, 0.09426473, 0, 25.46167, 0)
