@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_dmxg1")
+camera_impedance = 20.0
 max_move_vel = 2.0
 move_accel = 1.0
 move_decel = 8.0

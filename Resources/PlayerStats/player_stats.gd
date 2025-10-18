@@ -1,6 +1,7 @@
 class_name PlayerStats
 extends Resource
 
+@export var camera_impedance: float
 
 @export var max_move_vel: float
 @export var move_accel: float
