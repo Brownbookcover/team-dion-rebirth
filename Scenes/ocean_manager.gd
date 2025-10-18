@@ -10,4 +10,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	%OceanEnv.depth = clamp(%Player.position.y, -depth_range, depth_range) / depth_range
+	if %Player.position.y > 0:
+		%oceanDust.hide()
+	else:
+		%oceanDust.show()
 	pass
