@@ -37,7 +37,7 @@ func refresh_water_from_depth():
 		env.background_color = Color("#282f85")# * (abs(cos(depth)) / 2)
 		env.fog_light_color = Color("#282f85")# * (abs(cos(depth)) / 2)
 		env.glow_strength = 2.0
-		env.fog_density = 0.1283#* (abs(depth))
+		env.fog_density = 0.0283#* (abs(depth))
 		# env.adjustment_brightness = lerp(0.1, 1.0, depth + 1)
 		env.fog_light_energy = lerp(0.07, 4.5, depth + 1)
 		

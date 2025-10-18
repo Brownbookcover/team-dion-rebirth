@@ -58,12 +58,13 @@ shadow_mesh = SubResource("ArrayMesh_uopi7")
 [node name="Lighthouse" type="Node3D"]
 
 [node name="LighthouseLight" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.638694, 0, 0.7694607, 0, 1, 0, -0.7694606, 0, 0.63869405, 0, 0, 0)
-light_energy = 0.5
+transform = Transform3D(0.9042281, 0, 0.42704946, 0, 1, 0, -0.42704943, 0, 0.90422815, 0, 0, 0)
+light_energy = 0.2
 light_indirect_energy = 0.395
 light_volumetric_fog_energy = 0.415
 shadow_enabled = true
 script = ExtResource("1_yevh3")
+spin_speed = 0.2
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="LighthouseLight"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
