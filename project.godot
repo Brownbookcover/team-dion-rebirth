@@ -11,5 +11,6 @@ config_version=5
 [application]
 
 config/name="Team Dion Rebirth"
+run/main_scene="uid://e7tmn0b0ho0w"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
