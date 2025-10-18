@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://tni8jygdmkl2"]
+
+[sub_resource type="Environment" id="Environment_h343k"]
+background_mode = 1
+background_color = Color(0.15561655, 0.1839104, 0.5234375, 1)
+fog_enabled = true
+fog_light_color = Color(0.087, 0.10053332, 0.29, 1)
+fog_light_energy = 1.09
+fog_sun_scatter = 0.66
+fog_density = 0.1283
+fog_sky_affect = 0.243
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_l54bk"]
+
+[sub_resource type="Compositor" id="Compositor_x3dbg"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_h343k"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_l54bk"]
+lifetime_randomness = 0.11
+emission_shape_scale = Vector3(10, 10, 10)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angle_min = -150.29999
+angle_max = 235.80002
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+gravity = Vector3(0, -1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h343k"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.1
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_l54bk"]
+material = SubResource("StandardMaterial3D_h343k")
+size = Vector2(0.02, 0.02)
+
+[node name="OceanEnv" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_h343k")
+camera_attributes = SubResource("CameraAttributesPractical_l54bk")
+compositor = SubResource("Compositor_x3dbg")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.745117, 0, -24.214539)
+size = Vector3(36.82617, 1, 72.79065)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.80693966, -0.51732296, -0.2850007, 0, -0.48253357, 0.87587744, -0.590634, -0.70678025, -0.38937545, 0, 3.8621285, 0)
+light_color = Color(0.41094437, 0.43183997, 0.4557292, 1)
+shadow_enabled = true
+sky_mode = 1
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.43797, 4.505135, -12.906826)
+radius = 4.137091
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.43797, 0.5053859, -21.069475)
+radius = 4.137091
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.7723384, 0)
+visible = false
+mesh = SubResource("SphereMesh_h343k")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1559963, 0)
+amount = 1000
+speed_scale = 0.3
+process_material = SubResource("ParticleProcessMaterial_l54bk")
+draw_pass_1 = SubResource("QuadMesh_l54bk")
