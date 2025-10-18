@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://e7tmn0b0ho0w"]
+[gd_scene load_steps=5 format=3 uid="uid://e7tmn0b0ho0w"]
 
-[ext_resource type="Script" uid="uid://bq2i74m0amtwy" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://b435oqniqce3h" path="res://character_body_3d.tscn" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://d1ltfpggjtx13" path="res://chica.png" id="2_0xm2m"]
 
@@ -11,7 +10,6 @@ size = Vector3(100, 1, 100)
 size = Vector3(100, 1, 100)
 
 [node name="StaticBody3D" type="StaticBody3D"]
-script = ExtResource("1_h2yge")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_7dm0k")
@@ -22,16 +20,6 @@ shape = SubResource("BoxShape3D_ig7tw")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_ig7tw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2300951, 0)
-
-[node name="TextureRect" type="TextureRect" parent="."]
-anchors_preset = -1
-anchor_right = 1.0400001
-anchor_bottom = 1.2190001
-offset_left = -80.0
-offset_top = -76.0
-offset_right = -80.08008
-offset_bottom = -75.91205
-texture = ExtResource("2_0xm2m")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.301638, 0)
