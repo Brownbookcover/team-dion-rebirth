@@ -100,6 +100,8 @@ shader_parameter/foam_or_fade = false
 shader_parameter/far_clip = 50.0
 shader_parameter/steps = 512
 shader_parameter/ssr_screen_fade = 0.05
+shader_parameter/fade_position = Vector3(0, 0, 0)
+shader_parameter/fade_radius = 5.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_nryjb"]
 material = SubResource("ShaderMaterial_m74tm")
@@ -145,6 +147,7 @@ process_material = SubResource("ParticleProcessMaterial_l54bk")
 draw_pass_1 = SubResource("QuadMesh_l54bk")
 
 [node name="water_surface_above" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, -1.7484555e-07, 0, 1.7484555e-07, 1, 0, 0.4141178, 0)
 mesh = SubResource("PlaneMesh_nryjb")
 skeleton = NodePath("../water_surface_below")

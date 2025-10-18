@@ -45,6 +45,12 @@ uniform float far_clip = 50.0;
 uniform int steps : hint_range(64, 1024, 16) = 512;
 uniform float ssr_screen_fade : hint_range(0.01, 0.5, 0.01) = 0.05;
 
+group_uniforms helmet_hole;
+
+uniform vec3 fade_position = vec3(0.0, 0.0, 0.0); // World position
+uniform float fade_radius = 100.0;                  // Distance threshold
+
+
 float schlickfresnel(float ior1, float ior2, vec3 view, vec3 norm) {
 	float incident = dot(view, norm);
 	float reflectance = pow(((ior2 - ior1)/(ior2 + ior1)), 2.0);
@@ -238,7 +244,20 @@ void fragment() {
 				METALLIC *= 1.0 - edge_fade(uv, ssr_screen_fade);
 				EMISSION += texture(screen, uv).xyz * schlickfresnel(1.0, 1.33, VIEW, NORMAL) * edge_fade(uv, ssr_screen_fade);
 			}
+			
+
+			
+			
 		}
 
 	}
+
+		    // Get world position of current fragment
+
+		    float dist = distance(wposition, fade_position);
+			
+		    if (dist < fade_radius) {
+		        ALPHA *= 0.0;
+		    }
+
 }
