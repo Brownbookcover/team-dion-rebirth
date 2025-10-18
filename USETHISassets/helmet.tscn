@@ -16,6 +16,7 @@ metallic_texture = ExtResource("2_vwpy5")
 roughness = 0.78
 roughness_texture = ExtResource("2_vwpy5")
 roughness_texture_channel = 1
+disable_receive_shadows = true
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_nmvv5"]
 _surfaces = [{
@@ -99,7 +100,17 @@ shadow_mesh = SubResource("ArrayMesh_rf1wn")
 [node name="helmet2" instance=ExtResource("1_3mmgx")]
 
 [node name="helmet" parent="." index="0"]
+layers = 2
 mesh = SubResource("ArrayMesh_g8nio")
 
 [node name="glass" parent="helmet" index="0"]
 mesh = SubResource("ArrayMesh_st2pm")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5063839, 0.9040441, 0)
+light_energy = 0.654
+light_indirect_energy = 3.261
+light_volumetric_fog_energy = 0.0
+light_size = 0.435
+light_bake_mode = 0
+shadow_bias = 1.493
