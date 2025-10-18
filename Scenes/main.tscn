@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://e7tmn0b0ho0w"]
 
-[ext_resource type="PackedScene" uid="uid://b435oqniqce3h" path="res://character_body_3d.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://b435oqniqce3h" path="res://Prefabs/Player/player.tscn" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://d1ltfpggjtx13" path="res://chica.png" id="2_0xm2m"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7dm0k"]
@@ -18,7 +18,7 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_ig7tw")
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("1_ig7tw")]
+[node name="Player" parent="." instance=ExtResource("1_ig7tw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2300951, 0)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
