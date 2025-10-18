@@ -64,9 +64,12 @@ draw_pass_1 = SubResource("QuadMesh_jjvhh")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.301638, 0)
+visible = false
 billboard = 2
 texture = ExtResource("3_kry3j")
 
 [node name="OceanManager" type="Node" parent="."]
 script = ExtResource("4_jjvhh")
 depth_range = 5
+helmet_width = 0.495
+helmet_offset = Vector3(0.005, 0, -0.345)

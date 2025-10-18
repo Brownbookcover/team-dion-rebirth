@@ -4,6 +4,8 @@ extends Node3D
 var env
 var sun
 var elapsed = 0
+var helmet_position = Vector3.ZERO
+var helmet_width = 0.5
 @export var depth = 0.1
 
 # Called when the node enters the scene tree for the first time.
@@ -16,6 +18,12 @@ func _process(delta: float) -> void:
 	elapsed += delta
 	# depth = sin(elapsed * 2)
 	refresh_water_from_depth()
+	set_helmet_hole()
+	
+func set_helmet_hole():
+	var mat = %water_surface_above.get_active_material(0)
+	mat.set_shader_parameter("fade_position", helmet_position)
+	mat.set_shader_parameter("fade_radius", helmet_width )
 
 func refresh_water_from_depth():
 	if depth > 0:
