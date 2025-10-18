@@ -1,4 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://tni8jygdmkl2"]
+[gd_scene load_steps=9 format=3 uid="uid://tni8jygdmkl2"]
+
+[ext_resource type="PackedScene" uid="uid://ve2twiw7dju" path="res://USETHISassets/plane_body.tscn" id="1_l54bk"]
 
 [sub_resource type="Environment" id="Environment_h343k"]
 background_mode = 1
@@ -76,3 +78,6 @@ amount = 1000
 speed_scale = 0.3
 process_material = SubResource("ParticleProcessMaterial_l54bk")
 draw_pass_1 = SubResource("QuadMesh_l54bk")
+
+[node name="plane_body" parent="." instance=ExtResource("1_l54bk")]
+transform = Transform3D(0.10910326, 0.2573558, 0.9601377, -0.9206821, 0.3903134, 0, -0.3747546, -0.8839816, 0.27952734, 0, 12.4348345, 0)
