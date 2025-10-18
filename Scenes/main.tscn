@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://e7tmn0b0ho0w"]
+[gd_scene load_steps=10 format=3 uid="uid://e7tmn0b0ho0w"]
 
 [ext_resource type="PackedScene" uid="uid://tni8jygdmkl2" path="res://ocean_env.tscn" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://b435oqniqce3h" path="res://Prefabs/Player/player.tscn" id="2_jjvhh"]
 [ext_resource type="Texture2D" uid="uid://d1ltfpggjtx13" path="res://chica.png" id="3_kry3j"]
 [ext_resource type="Script" uid="uid://cd3mqiqyboymw" path="res://Scenes/ocean_manager.gd" id="4_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://wluy2khqegye" path="res://Scenes/level.tscn" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://bodyms6upc3dw" path="res://Scenes/lighthouse.tscn" id="6_21xkr"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8gbba"]
 lifetime_randomness = 0.11
@@ -35,7 +36,7 @@ size = Vector2(0.02, 0.02)
 [node name="OceanEnv" parent="." instance=ExtResource("1_8gbba")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.016212702, 0)
-depth = 0.4460190296173095
+depth = 1.41
 
 [node name="Player" parent="." instance=ExtResource("2_jjvhh")]
 unique_name_in_owner = true
@@ -62,3 +63,6 @@ helmet_offset = Vector3(0.005, 0, -0.345)
 
 [node name="Level" parent="." instance=ExtResource("5_kry3j")]
 transform = Transform3D(0.08115567, 0, 0.9967014, 0, 1, 0, -0.9967014, 0, 0.08115567, 0, -35.642, 134.11261)
+
+[node name="Lighthouse" parent="." instance=ExtResource("6_21xkr")]
+transform = Transform3D(0.45920777, 0, 0.8883289, 0, 1, 0, -0.8883289, 0, 0.45920777, 0, 99.55216, -76.2487)

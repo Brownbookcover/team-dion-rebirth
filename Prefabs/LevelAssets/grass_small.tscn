@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cj73phkjp1bpx"]
+
+[ext_resource type="PackedScene" uid="uid://wnpatkw8icfa" path="res://Prefabs/LevelAssets/grass.tscn" id="1_pjpy7"]
+
+[node name="grass_small" type="Node3D"]
+
+[node name="Grass" parent="." instance=ExtResource("1_pjpy7")]
+
+[node name="Grass2" parent="." instance=ExtResource("1_pjpy7")]
+transform = Transform3D(0.80488837, -0.19688049, -0.55981493, 0.23760113, 0.9713628, 0, 0.5437834, -0.13301267, 0.82861763, -0.9288101, 0, -0.5855336)
+
+[node name="Grass3" parent="." instance=ExtResource("1_pjpy7")]
+transform = Transform3D(0.87159055, 0, -0.49023455, 0, 1, 0, 0.49023455, 0, 0.87159055, -0.07342863, 0, 1.748281)
+
+[node name="Grass4" parent="." instance=ExtResource("1_pjpy7")]
+transform = Transform3D(0.7522249, 0.20509396, 0.6261743, -0.1576276, 0.9787423, -0.13121386, -0.6397744, 0, 0.7685628, 1.2044413, 0, 0.1208415)
