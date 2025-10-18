@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=4 uid="uid://wluy2khqegye"]
+[gd_scene load_steps=17 format=4 uid="uid://wluy2khqegye"]
 
 [ext_resource type="Shader" uid="uid://ct44mm88587q8" path="res://sand.tres" id="1_tumq0"]
 [ext_resource type="Texture2D" uid="uid://dsfirvaygnclw" path="res://underwater_art/coast_sand_03_diff_1k.jpg" id="2_k5f4k"]
 [ext_resource type="PackedScene" uid="uid://c0nmosye046tt" path="res://Prefabs/LevelAssets/grass_large.tscn" id="3_wqkje"]
 [ext_resource type="PackedScene" uid="uid://crfhwyhgnrivh" path="res://Prefabs/LevelAssets/grass_medium.tscn" id="4_0f350"]
 [ext_resource type="PackedScene" uid="uid://cj73phkjp1bpx" path="res://Prefabs/LevelAssets/grass_small.tscn" id="5_8c0lf"]
+[ext_resource type="PackedScene" uid="uid://dowsqx6c84wcj" path="res://Prefabs/LevelAssets/tank_prefab.tscn" id="6_0f350"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k5f4k"]
 render_priority = 0
@@ -122,6 +123,7 @@ size = Vector3(500, 20, 1000)
 [node name="Level" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.002986908, 0, 0.0038368702)
 mesh = SubResource("ArrayMesh_6phgx")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
@@ -154,3 +156,6 @@ transform = Transform3D(0.63584924, 0, 0.7718133, 0, 1, 0, -0.7718133, 0, 0.6358
 
 [node name="grass_large3" parent="." instance=ExtResource("3_wqkje")]
 transform = Transform3D(0.92329067, -0.38410196, 0, 0.38410196, 0.92329067, 0, 0, 0, 1, 23.437096, -24.930794, -33.02607)
+
+[node name="TankPrefab" parent="." instance=ExtResource("6_0f350")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.150481, -28.947535, -20.087427)

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dowsqx6c84wcj"]
+
+[ext_resource type="PackedScene" uid="uid://b72jm1irmdtby" path="res://underwater_art/tank.blend" id="1_nmtcb"]
+
+[node name="TankPrefab" type="Node3D"]
+
+[node name="tank" parent="." instance=ExtResource("1_nmtcb")]
+transform = Transform3D(0.175, 0, 0, 0, 0.175, 0, 0, 0, 0.175, 0, 0, 0)
