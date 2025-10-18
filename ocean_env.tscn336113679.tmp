@@ -1,10 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://tni8jygdmkl2"]
+[gd_scene load_steps=13 format=3 uid="uid://tni8jygdmkl2"]
 
 [ext_resource type="PackedScene" uid="uid://ve2twiw7dju" path="res://USETHISassets/plane_body.tscn" id="1_l54bk"]
 [ext_resource type="Script" uid="uid://4di26i8njmu8" path="res://ocean_env.gd" id="1_x3dbg"]
 [ext_resource type="Texture2D" uid="uid://cy8vvj3yxcdpi" path="res://underwater_art/citrus_orchard_puresky_1k.hdr" id="2_3gurc"]
-[ext_resource type="Shader" uid="uid://cg4s3uwo27yik" path="res://above_ocean.gdshader" id="4_o47wn"]
-[ext_resource type="Shader" uid="uid://bx71gfd6iyl7g" path="res://below_water_surface.tres" id="5_m74tm"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_o47wn"]
 panorama = ExtResource("2_3gurc")
@@ -13,21 +11,20 @@ panorama = ExtResource("2_3gurc")
 sky_material = SubResource("PanoramaSkyMaterial_o47wn")
 
 [sub_resource type="Environment" id="Environment_h343k"]
-background_mode = 1
-background_color = Color(0.15686275, 0.18431373, 0.52156866, 1)
+background_mode = 2
+background_energy_multiplier = 0.24
 sky = SubResource("Sky_m74tm")
 glow_enabled = true
 glow_intensity = 6.64
-glow_strength = 2.0
+glow_strength = 0.0
 glow_bloom = 0.25
 glow_blend_mode = 4
 fog_enabled = true
-fog_light_color = Color(0.15686275, 0.18431373, 0.52156866, 1)
-fog_light_energy = 0.3801
+fog_light_color = Color(0.087, 0.10053332, 0.29, 1)
+fog_light_energy = 1.09
 fog_sun_scatter = 0.66
-fog_density = 0.1283
+fog_density = 0.0
 fog_sky_affect = 0.243
-adjustment_enabled = true
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_l54bk"]
 
@@ -59,64 +56,8 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_3gurc")
 size = Vector2(0.02, 0.02)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_nryjb"]
-noise_type = 3
-frequency = 0.0364
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vtfcq"]
-noise = SubResource("FastNoiseLite_nryjb")
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_x6yrm"]
-frequency = 0.0038
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yxetp"]
-noise = SubResource("FastNoiseLite_x6yrm")
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_4tlme"]
-frequency = 0.036
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cdfqf"]
-noise = SubResource("FastNoiseLite_4tlme")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_m74tm"]
-render_priority = 0
-shader = ExtResource("4_o47wn")
-shader_parameter/surfacecolour = Color(0.24237667, 0.47566396, 0.6744791, 1)
-shader_parameter/volumecolour = Color(0.2150676, 0.45044485, 0.5651041, 1)
-shader_parameter/AirIOR = 1.0
-shader_parameter/IOR = 1.33
-shader_parameter/sampler1speed = Vector2(0.02, 0)
-shader_parameter/sampler2speed = Vector2(0, 0.02)
-shader_parameter/samplermix = 0.5
-shader_parameter/samplerscale = Vector2(0.1, 0.1)
-shader_parameter/normal1tex = SubResource("NoiseTexture2D_yxetp")
-shader_parameter/normal2tex = SubResource("NoiseTexture2D_cdfqf")
-shader_parameter/normalstrength = 0.8999999798832
-shader_parameter/height1tex = SubResource("NoiseTexture2D_vtfcq")
-shader_parameter/heightstrength = 0.21999999508256
-shader_parameter/refrationamount = 0.0
-shader_parameter/fog_underwater = false
-shader_parameter/edge_size = 0.1
-shader_parameter/foam_or_fade = false
-shader_parameter/far_clip = 50.0
-shader_parameter/steps = 512
-shader_parameter/ssr_screen_fade = 0.05
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_nryjb"]
-material = SubResource("ShaderMaterial_m74tm")
-size = Vector2(1000, 1000)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_uvky1"]
-render_priority = 0
-shader = ExtResource("5_m74tm")
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_x0f7i"]
-material = SubResource("ShaderMaterial_uvky1")
-size = Vector2(1000, 1000)
-
 [node name="OceanEnv" type="Node3D"]
 script = ExtResource("1_x3dbg")
-depth = -0.93
 
 [node name="oceanWorldEnv" type="WorldEnvironment" parent="."]
 unique_name_in_owner = true
@@ -128,11 +69,9 @@ compositor = SubResource("Compositor_x3dbg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.745117, 0, -24.214539)
 size = Vector3(36.82617, 1, 72.79065)
 
-[node name="sun" type="DirectionalLight3D" parent="."]
-unique_name_in_owner = true
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.80693966, -0.51732296, -0.2850007, 0, -0.48253357, 0.87587744, -0.590634, -0.70678025, -0.38937545, 0, 3.8621285, 0)
 light_color = Color(0.41094437, 0.43183997, 0.4557292, 1)
-light_energy = 0.0
 shadow_enabled = true
 sky_mode = 1
 
@@ -159,13 +98,3 @@ draw_pass_1 = SubResource("QuadMesh_l54bk")
 
 [node name="plane_body" parent="." instance=ExtResource("1_l54bk")]
 transform = Transform3D(0.10910326, 0.2573558, 0.9601377, -0.9206821, 0.3903134, 0, -0.3747546, -0.8839816, 0.27952734, 0, 12.4348345, 0)
-
-[node name="water_surface_above" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, -1.7484555e-07, 0, 1.7484555e-07, 1, 0, 0.4141178, 0)
-mesh = SubResource("PlaneMesh_nryjb")
-skeleton = NodePath("../water_surface_below")
-
-[node name="water_surface_below" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0)
-visible = false
-mesh = SubResource("PlaneMesh_x0f7i")

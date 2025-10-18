@@ -1,0 +1,252 @@
+[gd_resource type="VisualShader" load_steps=15 format=3 uid="uid://bx71gfd6iyl7g"]
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_vm0hk"]
+default_input_values = [0, 0.0, 1, 2.0]
+operator = 2
+
+[sub_resource type="VisualShaderNodeUVFunc" id="VisualShaderNodeUVFunc_5rfwm"]
+default_input_values = [1, Vector2(1, 1), 2, Vector2(1.27, 3.835)]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_j5c17"]
+input_name = "time"
+
+[sub_resource type="VisualShaderNodeVec2Constant" id="VisualShaderNodeVec2Constant_h00c8"]
+expanded_output_ports = [0]
+constant = Vector2(0.001, 0.1)
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_15hlm"]
+default_input_values = [0, 0.0, 1, 2.0]
+operator = 2
+
+[sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_78f24"]
+default_input_values = [0, 0.0, 1, 2.0]
+operator = 2
+
+[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_q1tla"]
+constant = Color(0, 0.2813217, 0.4509804, 1)
+
+[sub_resource type="VisualShaderNodeRemap" id="VisualShaderNodeRemap_vm0hk"]
+default_input_values = [1, Vector3(0, 0, 0), 2, Vector3(1, 1, 1), 3, Vector3(0, 0, 0), 4, Vector3(1, 1, 1), 0, Vector3(0, 0, 0)]
+op_type = 3
+
+[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_5rfwm"]
+constant = Color(0, 0.52996564, 0.7490196, 1)
+
+[sub_resource type="VisualShaderNodeExpression" id="VisualShaderNodeExpression_vm0hk"]
+output_port_for_preview = 0
+size = Vector2(704, 560)
+expression = "float worley_v = worley(UV, 300.0, 300.0);
+ALBEDO = vec3(worley_v);"
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_vm0hk"]
+expanded_output_ports = [0]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeGlobalExpression" id="VisualShaderNodeGlobalExpression_5rfwm"]
+size = Vector2(900, 1060)
+expression = "// stolen from https://godotshaders.com/snippet/voronoi/
+
+vec2 random(vec2 uv) {
+	return vec2(fract(sin(dot(uv.xy,
+		vec2(12.9898,78.233))) * 43758.5453123));
+}
+
+float worley(vec2 uv, float columns, float rows) {
+	
+	vec2 index_uv = floor(vec2(uv.x * columns, uv.y * rows));
+	vec2 fract_uv = fract(vec2(uv.x * columns, uv.y * rows));
+	
+	float minimum_dist = 1.0;  
+	
+	for (int y= -1; y <= 1; y++) {
+		for (int x= -1; x <= 1; x++) {
+			vec2 neighbor = vec2(float(x),float(y));
+			vec2 point = random(index_uv + neighbor);
+			
+			vec2 diff = neighbor + point - fract_uv;
+			float dist = length(diff);
+			minimum_dist = min(minimum_dist, dist);
+		}
+	}
+	
+	return minimum_dist;
+}"
+
+[sub_resource type="VisualShaderNodeVectorFunc" id="VisualShaderNodeVectorFunc_vm0hk"]
+function = 32
+
+[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_1y05h"]
+constant = Color(0, 0, 0, 1)
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, depth_test_default, cull_back, diffuse_lambert, specular_schlick_ggx;
+
+
+
+// GlobalExpression:0
+	// stolen from https://godotshaders.com/snippet/voronoi/
+	
+	vec2 random(vec2 uv) {
+		return vec2(fract(sin(dot(uv.xy,
+			vec2(12.9898,78.233))) * 43758.5453123));
+	}
+	
+	float worley(vec2 uv, float columns, float rows) {
+		
+		vec2 index_uv = floor(vec2(uv.x * columns, uv.y * rows));
+		vec2 fract_uv = fract(vec2(uv.x * columns, uv.y * rows));
+		
+		float minimum_dist = 1.0;  
+		
+		for (int y= -1; y <= 1; y++) {
+			for (int x= -1; x <= 1; x++) {
+				vec2 neighbor = vec2(float(x),float(y));
+				vec2 point = random(index_uv + neighbor);
+				
+				vec2 diff = neighbor + point - fract_uv;
+				float dist = length(diff);
+				minimum_dist = min(minimum_dist, dist);
+			}
+		}
+		
+		return minimum_dist;
+	}
+
+void fragment() {
+// ColorConstant:9
+	vec4 n_out9p0 = vec4(0.000000, 0.000000, 0.000000, 1.000000);
+
+
+// Input:3
+	vec2 n_out3p0 = UV;
+
+
+// Vector2Constant:13
+	vec2 n_out13p0 = vec2(0.001000, 0.100000);
+	float n_out13p1 = n_out13p0.r;
+	float n_out13p2 = n_out13p0.g;
+
+
+// Input:12
+	float n_out12p0 = TIME;
+
+
+// FloatOp:14
+	float n_out14p0 = n_out13p1 * n_out12p0;
+
+
+// UVFunc:11
+	vec2 n_in11p1 = vec2(1.00000, 1.00000);
+	vec2 n_out11p0 = vec2(n_out14p0) * n_in11p1 + n_out3p0;
+
+
+	vec3 n_out2p0;
+// Expression:2
+	n_out2p0 = vec3(0.0, 0.0, 0.0);
+	{
+		float worley_v = worley(n_out11p0, 300.0, 300.0);
+		n_out2p0 = vec3(worley_v);
+	}
+
+
+// VectorFunc:8
+	vec3 n_out8p0 = vec3(1.0) - n_out2p0;
+
+
+// FloatOp:10
+	float n_in10p1 = 2.00000;
+	float n_out10p0 = n_out8p0.x * n_in10p1;
+
+
+// ColorConstant:19
+	vec4 n_out19p0 = vec4(0.000000, 0.529966, 0.749020, 1.000000);
+
+
+// ColorConstant:16
+	vec4 n_out16p0 = vec4(0.000000, 0.281322, 0.450980, 1.000000);
+
+
+	vec3 n_out18p0;
+// Remap:18
+	vec3 n_in18p1 = vec3(0.00000, 0.00000, 0.00000);
+	vec3 n_in18p2 = vec3(1.00000, 1.00000, 1.00000);
+	{
+		vec3 __input_range = n_in18p2 - n_in18p1;
+		vec3 __output_range = vec3(n_out16p0.xyz) - vec3(n_out19p0.xyz);
+		n_out18p0 = vec3(n_out19p0.xyz) + __output_range * ((vec3(n_out10p0) - n_in18p1) / __input_range);
+	}
+
+
+// Output:0
+	ALBEDO = vec3(n_out9p0.xyz);
+	EMISSION = n_out18p0;
+
+
+}
+"
+nodes/fragment/0/position = Vector2(560, 200)
+nodes/fragment/2/node = SubResource("VisualShaderNodeExpression_vm0hk")
+nodes/fragment/2/position = Vector2(-1180, 140)
+nodes/fragment/2/size = Vector2(704, 560)
+nodes/fragment/2/input_ports = "0,3,UV;"
+nodes/fragment/2/output_ports = "0,4,ALBEDO;"
+nodes/fragment/2/expression = "float worley_v = worley(UV, 300.0, 300.0);
+ALBEDO = vec3(worley_v);"
+nodes/fragment/3/node = SubResource("VisualShaderNodeInput_vm0hk")
+nodes/fragment/3/position = Vector2(-2120, 120)
+nodes/fragment/7/node = SubResource("VisualShaderNodeGlobalExpression_5rfwm")
+nodes/fragment/7/position = Vector2(-740, -1080)
+nodes/fragment/7/size = Vector2(900, 1060)
+nodes/fragment/7/input_ports = ""
+nodes/fragment/7/output_ports = ""
+nodes/fragment/7/expression = "// stolen from https://godotshaders.com/snippet/voronoi/
+
+vec2 random(vec2 uv) {
+	return vec2(fract(sin(dot(uv.xy,
+		vec2(12.9898,78.233))) * 43758.5453123));
+}
+
+float worley(vec2 uv, float columns, float rows) {
+	
+	vec2 index_uv = floor(vec2(uv.x * columns, uv.y * rows));
+	vec2 fract_uv = fract(vec2(uv.x * columns, uv.y * rows));
+	
+	float minimum_dist = 1.0;  
+	
+	for (int y= -1; y <= 1; y++) {
+		for (int x= -1; x <= 1; x++) {
+			vec2 neighbor = vec2(float(x),float(y));
+			vec2 point = random(index_uv + neighbor);
+			
+			vec2 diff = neighbor + point - fract_uv;
+			float dist = length(diff);
+			minimum_dist = min(minimum_dist, dist);
+		}
+	}
+	
+	return minimum_dist;
+}"
+nodes/fragment/8/node = SubResource("VisualShaderNodeVectorFunc_vm0hk")
+nodes/fragment/8/position = Vector2(-440, 160)
+nodes/fragment/9/node = SubResource("VisualShaderNodeColorConstant_1y05h")
+nodes/fragment/9/position = Vector2(66.90725, 206.3859)
+nodes/fragment/10/node = SubResource("VisualShaderNodeFloatOp_vm0hk")
+nodes/fragment/10/position = Vector2(-260, 480)
+nodes/fragment/11/node = SubResource("VisualShaderNodeUVFunc_5rfwm")
+nodes/fragment/11/position = Vector2(-1560, 320)
+nodes/fragment/12/node = SubResource("VisualShaderNodeInput_j5c17")
+nodes/fragment/12/position = Vector2(-2420, 680)
+nodes/fragment/13/node = SubResource("VisualShaderNodeVec2Constant_h00c8")
+nodes/fragment/13/position = Vector2(-2280, 340)
+nodes/fragment/14/node = SubResource("VisualShaderNodeFloatOp_15hlm")
+nodes/fragment/14/position = Vector2(-1940, 400)
+nodes/fragment/15/node = SubResource("VisualShaderNodeFloatOp_78f24")
+nodes/fragment/15/position = Vector2(-1940, 700)
+nodes/fragment/16/node = SubResource("VisualShaderNodeColorConstant_q1tla")
+nodes/fragment/16/position = Vector2(-600, 820)
+nodes/fragment/18/node = SubResource("VisualShaderNodeRemap_vm0hk")
+nodes/fragment/18/position = Vector2(-140, 1000)
+nodes/fragment/19/node = SubResource("VisualShaderNodeColorConstant_5rfwm")
+nodes/fragment/19/position = Vector2(-660, 1040)
+nodes/fragment/connections = PackedInt32Array(2, 0, 8, 0, 9, 0, 0, 0, 8, 0, 10, 0, 3, 0, 11, 0, 11, 0, 2, 0, 13, 1, 14, 0, 13, 2, 15, 0, 12, 0, 15, 1, 12, 0, 14, 1, 14, 0, 11, 2, 16, 0, 18, 4, 19, 0, 18, 3, 10, 0, 18, 0, 18, 0, 0, 5)
