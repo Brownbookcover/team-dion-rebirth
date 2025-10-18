@@ -1,6 +1,6 @@
 extends Node
 
-@export var depth_range = 20
+@export var depth_range = 60
 @export var helmet_width = 0.5
 @export var helmet_offset = Vector3.ZERO
 
