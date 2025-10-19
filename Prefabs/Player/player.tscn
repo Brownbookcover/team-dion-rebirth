@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b435oqniqce3h"]
+[gd_scene load_steps=8 format=3 uid="uid://b435oqniqce3h"]
 
 [ext_resource type="Script" uid="uid://bq4xu8qu2ermt" path="res://Prefabs/Player/player.gd" id="1_iwpo4"]
 [ext_resource type="Resource" uid="uid://shgqrutwc61y" path="res://Resources/PlayerStats/default_player_stats.tres" id="2_hnwp3"]
 [ext_resource type="PackedScene" uid="uid://dujj11j6fv3d1" path="res://USETHISassets/helmet.tscn" id="3_sysjd"]
 [ext_resource type="Script" path="res://Prefabs/Player/helmet.gd" id="4_21ygf"]
+[ext_resource type="PackedScene" uid="uid://bk3vymad8my5u" path="res://Scenes/OxygenUI.tscn" id="5_you5p"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fb3t6"]
 
@@ -41,3 +42,6 @@ unique_name_in_owner = true
 target_position = Vector3(0, 0, -5)
 collide_with_areas = true
 collide_with_bodies = false
+
+[node name="OxygenUi" parent="." instance=ExtResource("5_you5p")]
+mouse_filter = 2

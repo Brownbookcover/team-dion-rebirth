@@ -84,6 +84,9 @@ func _handle_pickup():
 		
 		if pickup_name == "helmet":
 			_equip_helmet()
+			
+		if pickup_name == "canister":
+			$OxygenUi/RichTextLabel.text = 100
 
 
 func _equip_helmet():
