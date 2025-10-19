@@ -28,6 +28,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1022439, -0.94708776)
 [node name="Player" parent="." groups=["player", "playertest"] instance=ExtResource("1_ig7tw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2300951, 0)
 
+[node name="Shark" parent="." node_paths=PackedStringArray("nav_region", "jumpscare_image") instance=ExtResource("3_h2yge")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 3.140419, -24.524391)
+nav_region = NodePath("../NavigationRegion3D")
+jumpscare_image = NodePath("../Chica")
+
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.301638, 0)
 visible = false
@@ -36,11 +41,6 @@ texture = ExtResource("2_0xm2m")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.09426473, 0.9955472, 0, -0.9955472, 0.09426473, 0, 25.46167, 0)
-
-[node name="Shark" parent="." node_paths=PackedStringArray("nav_region", "jumpscare_image") instance=ExtResource("3_h2yge")]
-transform = Transform3D(-0.9551286, 0, -0.29619148, 0, 1, 0, 0.29619148, 0, -0.9551286, -7.8101006, 1.9432268, -26.179462)
-nav_region = NodePath("../NavigationRegion3D")
-jumpscare_image = NodePath("../Chica")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_h2yge")

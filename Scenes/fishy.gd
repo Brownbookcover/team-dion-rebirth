@@ -2,7 +2,7 @@ extends Node3D
 
 var index = 0
 @onready var points = [$Point1.global_position, $Point2.global_position, $Point3.global_position]
-@export var rotation_speed: float = 7.0 
+@export var rotation_speed: float = 1
 var target_rotation: Basis 
 
 func _ready() -> void:
