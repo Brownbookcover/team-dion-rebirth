@@ -66,6 +66,7 @@ func _physics_process(delta: float) -> void:
 
 
 func kill_player():
+	player.die(Color.DARK_RED)
 	print("You Died")
 	player_killed = true
 	%killplayer.play()

@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 	if start_oxygen:
 		time_passed += delta
 		if time_passed >= 1.0:
-			level_float -= .01
+			level_float -= .005
 			if level_float < 0.0:
 				level_float = 0.0
 			time_passed = 0.0
