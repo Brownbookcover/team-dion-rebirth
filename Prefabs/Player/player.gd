@@ -85,6 +85,12 @@ func _handle_pickup():
 
 func _equip_helmet():
 	helmet_model.visible = true
+	stats = load("res://Resources/PlayerStats/suit_player_stats.tres")
+
+
+func _unequip_helmet():
+	helmet_model.visible = true
+	stats = load("res://Resources/PlayerStats/default_player_stats.tres")
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
