@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cbv2n4djn2fqu" path="res://Scenes/triggers.gd" id="1_dia1d"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2v2da"]
+size = Vector3(7.852997, 15.562881, 16.648926)
 
 [node name="TriggerZone" type="Area3D"]
 script = ExtResource("1_dia1d")

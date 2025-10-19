@@ -12,4 +12,11 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node3D) -> void:
-	pass # Replace with function body.
+	if body.is_in_group("player"):
+		make_visible_for_duration(5)
+		
+
+func make_visible_for_duration(duration: float):
+	$Label.visible = true
+	await get_tree().create_timer(duration).timeout
+	$Label.visible = false
