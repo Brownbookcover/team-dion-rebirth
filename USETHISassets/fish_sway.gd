@@ -1,4 +1,3 @@
-@tool
 extends MeshInstance3D
 
 var elapsed = 0.0

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d1ltfpggjtx13" path="res://chica.png" id="2_d5pdq"]
 [ext_resource type="Texture2D" uid="uid://bkpwf4xxt7baa" path="res://underwater_art/shark.jpg" id="2_l26on"]
 [ext_resource type="Texture2D" uid="uid://dk7orhpkfw6bc" path="res://underwater_art/shark_normal.png" id="3_6ojlb"]
-[ext_resource type="Script" path="res://USETHISassets/fish_sway.gd" id="4_p1hqx"]
+[ext_resource type="Script" uid="uid://iug3mgt01fq" path="res://USETHISassets/fish_sway.gd" id="4_p1hqx"]
 [ext_resource type="AudioStream" uid="uid://bhn0p552bi1cy" path="res://sound/Shark Growl 2.wav" id="6_6ojlb"]
 [ext_resource type="Script" path="res://shark_random.gd" id="7_p1hqx"]
 
@@ -48,7 +48,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_ca2k6"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_p1hqx"]
 resource_name = "shark_goblin_shark"
 _surfaces = [{
 "aabb": AABB(-0.7186711, -0.07877317, -0.16365218, 1.4396006, 0.15754634, 0.2839892),
@@ -97,7 +97,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("l0uQ8f//t8Ml8wPXyGvk9v//WP3s2pDOAADvr+1ewupPXlCkRBgt+iXz+yjIaxoJl0tuDv//RTz//6YC7NpuMU9erltEGNEFAAAPUO1ePBWv1HbojUba86/UiBeNRh8MNliOCBqnji82WHD3Gqdw0Mrc//82jI7WiR15xB0q4OhtVli9AAAQ/8rcAAA2jHApiR2FOx0qDxdtVqZCAADuAIXrBruozQFsIdkvf4rfcsF6HrFk/hOoTQU7eZTPACJZsOSFYXNBdKB/54N6WQWZZwMugJd+6AOupOREhr3h5LiS7kOURQZam844G54sFFSR")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_ca2k6")
+shadow_mesh = SubResource("ArrayMesh_p1hqx")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l26on"]
 radius = 0.75
@@ -124,7 +124,7 @@ script = ExtResource("1_rwmi6")
 agent_shark = NodePath("NavigationAgent3D")
 
 [node name="goblin_shark" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.585828, -4.279389, -0.01810028, -0.034998152, -1.5298176e-09, -4.9998775, 4.2792845, 2.5858912, -0.029954137, 3.0260422, 0, 0.081164844)
+transform = Transform3D(3.415738, -3.6513243, -0.023909483, -0.034998156, -1.5298178e-09, -4.9998775, 3.651235, 3.4158216, -0.025557917, 3.564966, 0, 0.18894811)
 mesh = SubResource("ArrayMesh_sd3ew")
 skeleton = NodePath("")
 script = ExtResource("4_p1hqx")

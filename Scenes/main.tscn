@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d1ltfpggjtx13" path="res://chica.png" id="3_kry3j"]
 [ext_resource type="Script" uid="uid://cd3mqiqyboymw" path="res://Scenes/ocean_manager.gd" id="4_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://wluy2khqegye" path="res://Scenes/level.tscn" id="5_kry3j"]
-[ext_resource type="PackedScene" uid="uid://bodyms6upc3dw" path="res://Scenes/lighthouse.tscn" id="6_21xkr"]
+[ext_resource type="PackedScene" path="res://Scenes/lighthouse.tscn" id="6_21xkr"]
 [ext_resource type="PackedScene" uid="uid://cn0ymmanhkmko" path="res://shark.tscn" id="8_344ge"]
 [ext_resource type="Script" uid="uid://4vcdimlghv4p" path="res://Scenes/opening_manager.gd" id="8_d1ilt"]
 [ext_resource type="Texture2D" uid="uid://6msfqnomv8d3" path="res://underwater_art/uncrashed_plane_canvas.png" id="9_6iyac"]
@@ -373,20 +373,18 @@ _data = {
 
 [node name="OceanEnv" parent="." instance=ExtResource("1_8gbba")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.016212702, 0)
-visible = false
-depth = 1.41
+depth = 1.0
 
 [node name="HelmetOutline" parent="." instance=ExtResource("2_6bp64")]
 transform = Transform3D(0.097452015, 7.825655e-09, -2.4980998, 1.418638, 2.0577662, 0.055341735, 2.0562024, -1.4197167, 0.0802134, -19.214, 73.20215, 432.425)
 
 [node name="Player" parent="." instance=ExtResource("2_jjvhh")]
 unique_name_in_owner = true
-transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -11.298302, 113.00807, 493.25372)
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -21.590769, 112.87032, 475.21246)
 
 [node name="oceanDust" type="GPUParticles3D" parent="Player"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9259012, 0)
+visible = false
 amount = 1000
 speed_scale = 0.3
 process_material = SubResource("ParticleProcessMaterial_8gbba")
@@ -400,8 +398,8 @@ texture = ExtResource("3_kry3j")
 
 [node name="OceanManager" type="Node" parent="."]
 script = ExtResource("4_jjvhh")
-helmet_width = 0.495
-helmet_offset = Vector3(0.005, 0, -0.345)
+helmet_width = 0.87
+helmet_offset = Vector3(0, 1.5, -0.745)
 
 [node name="Level" parent="." instance=ExtResource("5_kry3j")]
 transform = Transform3D(0.08115567, 0, 0.9967014, 0, 1, 0, -0.9967014, 0, 0.08115567, 0.05, 0, 134.111)
@@ -447,7 +445,7 @@ volume_db = 22.917
 autoplay = true
 
 [node name="Shark" parent="." instance=ExtResource("8_344ge")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 60.3814, -60.567528, 171.9231)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -12.838562, -20.265461, 188.80948)
 
 [node name="Canister" parent="." instance=ExtResource("15_wsu2k")]
 transform = Transform3D(0.49610287, -0.113585226, -0.8608025, 0.67620754, 0.6724209, 0.30098814, 0.5446335, -0.73140204, 0.410397, -6.8701677, -44.864098, 339.85495)

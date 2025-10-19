@@ -18,14 +18,14 @@ background_color = Color(1, 1, 1, 1)
 sky = SubResource("Sky_m74tm")
 glow_enabled = true
 glow_intensity = 6.64
-glow_strength = 0.2
+glow_strength = 0.002
 glow_bloom = 0.25
 glow_blend_mode = 4
 fog_enabled = true
 fog_mode = 1
-fog_light_color = Color(1, 1, 1, 1)
-fog_light_energy = 0.02
-fog_density = 0.8393
+fog_light_color = Color(0.53333336, 0.53333336, 0.53333336, 1)
+fog_light_energy = 0.0
+fog_density = 2e-05
 fog_sky_affect = 0.243
 adjustment_enabled = true
 
@@ -149,7 +149,7 @@ draw_pass_1 = SubResource("QuadMesh_l54bk")
 
 [node name="water_surface_above" type="MeshInstance3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, -1.7484555e-07, 0, 1.7484555e-07, 1, 0, 0.4141178, 0)
+transform = Transform3D(1, 0, 0, 0, 1, -1.7484555e-07, 0, 1.7484555e-07, 1, 0, 1.06, 0)
 layers = 2
 mesh = SubResource("PlaneMesh_nryjb")
 skeleton = NodePath("../water_surface_below")
