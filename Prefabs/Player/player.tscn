@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bq4xu8qu2ermt" path="res://Prefabs/Player/player.gd" id="1_iwpo4"]
 [ext_resource type="Resource" uid="uid://shgqrutwc61y" path="res://Resources/PlayerStats/default_player_stats.tres" id="2_hnwp3"]
 [ext_resource type="PackedScene" uid="uid://dujj11j6fv3d1" path="res://USETHISassets/helmet.tscn" id="3_sysjd"]
-[ext_resource type="Script" uid="uid://kh4akc2wsvdo" path="res://Prefabs/Player/helmet.gd" id="4_21ygf"]
+[ext_resource type="Script" path="res://Prefabs/Player/helmet.gd" id="4_21ygf"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fb3t6"]
 

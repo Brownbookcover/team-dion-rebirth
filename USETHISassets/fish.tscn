@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=4 uid="uid://drucq3s7ov0qm"]
 
-[ext_resource type="Script" uid="uid://iug3mgt01fq" path="res://USETHISassets/fish_sway.gd" id="2_ttssx"]
+[ext_resource type="Script" path="res://USETHISassets/fish_sway.gd" id="2_ttssx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_swevw"]
 resource_name = "Material.001"
@@ -47,7 +47,7 @@ shadow_mesh = SubResource("ArrayMesh_c1cfv")
 [node name="fish" type="Node3D" parent="."]
 
 [node name="Plane" type="MeshInstance3D" parent="fish"]
-transform = Transform3D(1.0295885, 3.1361392e-07, 0.07812892, 0.07812892, 1.5226219e-06, -1.169126, -6.7790204e-08, 0.07812892, 6.2869384e-07, 0.3415722, -0.0014327765, 0.005671223)
+transform = Transform3D(1.0295885, 3.1361392e-07, -0.04514595, -0.04514595, 1.5226219e-06, -1.169126, -6.7790204e-08, -0.04514595, 6.2869384e-07, 0.47267643, -0.0014327765, 0.03189099)
 mesh = SubResource("ArrayMesh_r245f")
 skeleton = NodePath("")
 script = ExtResource("2_ttssx")

@@ -38,7 +38,6 @@ func _physics_process(delta: float) -> void:
 	else:
 		var direction = agent_shark.get_next_path_position() - position
 		velocity = direction.normalized() * shark_move_speed
-	print(agent_shark.target_position)
 	move_and_slide()
 
 

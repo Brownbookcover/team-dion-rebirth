@@ -5,36 +5,37 @@
 [node name="School" type="Node3D"]
 
 [node name="Fish" parent="." instance=ExtResource("1_aa4mn")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.3447919, 0, -0.08122611)
 
 [node name="Fish2" parent="." instance=ExtResource("1_aa4mn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0807769, -0.44860458)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.89618814, 1.0807769, -0.080356956)
 
 [node name="Fish3" parent="." instance=ExtResource("1_aa4mn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5995188, 1.3826268, 0.9548824)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.3027713, 1.3826268, 1.5164399)
 
 [node name="Fish4" parent="." instance=ExtResource("1_aa4mn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1583939, 0.5423579, 0)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.3406105, 0.5423579, -2.2396157)
 
 [node name="Fish5" parent="." instance=ExtResource("1_aa4mn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3292058, 0.2603191, -2.242661)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.90237737, 0.2603191, -2.4060829)
 
 [node name="Fish6" parent="." instance=ExtResource("1_aa4mn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3292058, 1.3410962, -2.6912656)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.350981, 1.3410962, -2.4052136)
 
 [node name="Fish7" parent="." instance=ExtResource("1_aa4mn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.729687, 1.642946, -1.2877786)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.055602133, 1.642946, -0.8084167)
 
 [node name="Fish8" parent="." instance=ExtResource("1_aa4mn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4876, 0.80267704, -2.242661)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.90655875, 0.80267704, -4.564473)
 
 [node name="Fish9" parent="." instance=ExtResource("1_aa4mn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2500322, -0.22947586, -3.2804308)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.9293365, -0.22947586, 3.1751554)
 
 [node name="Fish10" parent="." instance=ExtResource("1_aa4mn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2500322, 0.8513012, -3.7290354)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.37794, 0.8513012, 3.1760247)
 
 [node name="Fish11" parent="." instance=ExtResource("1_aa4mn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.849551, 1.153151, -2.3255484)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.9713571, 1.153151, 4.7728214)
 
 [node name="Fish12" parent="." instance=ExtResource("1_aa4mn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0916381, 0.31288207, -3.2804308)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.9335179, 0.31288207, 1.0167651)

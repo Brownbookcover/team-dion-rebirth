@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvjfmw20g33u8"]
+
+[ext_resource type="Script" uid="uid://ch6q1su8bld6" path="res://Scenes/fishy.gd" id="1_i2ot2"]
+[ext_resource type="PackedScene" uid="uid://d3kdpkcm0rkq4" path="res://USETHISassets/school.tscn" id="1_qgoro"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_i2ot2")
+
+[node name="Point1" type="Marker3D" parent="."]
+
+[node name="Point2" type="Marker3D" parent="."]
+
+[node name="Point3" type="Marker3D" parent="."]
+
+[node name="School" parent="." instance=ExtResource("1_qgoro")]
