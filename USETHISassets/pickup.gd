@@ -9,17 +9,17 @@ extends Area3D
 
 func hover():
 	if pickup_name == "helmet":
-		mesh.mesh.surface_get_material(0).next_pass.albedo_color = Color.WHITE
+		mesh.mesh.surface_get_material(0).stencil_color = Color.WHITE
 	if pickup_name == "canister":
-		mesh1.mesh.surface_get_material(0).next_pass.albedo_color = Color.WHITE
-		mesh1.mesh.surface_get_material(1).next_pass.albedo_color = Color.WHITE
-		mesh2.mesh.surface_get_material(0).next_pass.albedo_color = Color.WHITE
+		mesh1.mesh.surface_get_material(0).stencil_color = Color.WHITE
+		mesh1.mesh.surface_get_material(1).stencil_color = Color.WHITE
+		mesh2.mesh.surface_get_material(0).stencil_color = Color.WHITE
 
 
 func unhover():
 	if pickup_name == "helmet":
-		mesh.mesh.surface_get_material(0).next_pass.albedo_color = Color.YELLOW
+		mesh.mesh.surface_get_material(0).stencil_color = Color.YELLOW
 	if pickup_name == "canister":
-		mesh1.mesh.surface_get_material(0).next_pass.albedo_color = Color.YELLOW
-		mesh1.mesh.surface_get_material(1).next_pass.albedo_color = Color.YELLOW
-		mesh2.mesh.surface_get_material(0).next_pass.albedo_color = Color.YELLOW
+		mesh1.mesh.surface_get_material(0).stencil_color = Color.YELLOW
+		mesh1.mesh.surface_get_material(1).stencil_color = Color.YELLOW
+		mesh2.mesh.surface_get_material(0).stencil_color = Color.YELLOW

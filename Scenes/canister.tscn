@@ -1,6 +1,6 @@
-[gd_scene load_steps=15 format=4 uid="uid://bm5nvaw4ukuv5"]
+[gd_scene load_steps=15 format=4 uid="uid://covgya4w2uarj"]
 
-[ext_resource type="Script" uid="uid://cev4f2bjjb043" path="res://Scenes/canister.gd" id="1_j8e8v"]
+[ext_resource type="Script" path="res://Scenes/canister.gd" id="1_j8e8v"]
 [ext_resource type="PackedScene" uid="uid://b72jm1irmdtby" path="res://underwater_art/tank.blend" id="2_y4bj8"]
 [ext_resource type="Script" uid="uid://c1wqv4p0flgvb" path="res://USETHISassets/pickup.gd" id="3_bo744"]
 
@@ -8,7 +8,7 @@
 render_priority = 1
 transparency = 1
 shading_mode = 0
-albedo_color = Color(0.7864583, 0.77652526, 0, 1)
+albedo_color = Color(0.8862745, 0.8784314, 0, 1)
 grow = true
 grow_amount = 0.1
 stencil_mode = 3
@@ -22,12 +22,16 @@ next_pass = SubResource("StandardMaterial3D_bo744")
 cull_mode = 2
 albedo_color = Color(0.9064818, 0.01042614, 0, 1)
 roughness = 0.28178695
+stencil_mode = 1
+stencil_flags = 2
+stencil_color = Color(0.8862745, 0.8784314, 0, 1)
+stencil_outline_thickness = 0.1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mvuyt"]
 render_priority = 1
 transparency = 1
 shading_mode = 0
-albedo_color = Color(0.7864583, 0.77652526, 0, 1)
+albedo_color = Color(0.94509804, 0.9411765, 0, 1)
 grow = true
 grow_amount = 0.1
 stencil_mode = 3
@@ -41,6 +45,10 @@ next_pass = SubResource("StandardMaterial3D_mvuyt")
 cull_mode = 2
 albedo_color = Color(0.49032402, 0.50817776, 0.48923993, 1)
 roughness = 0.27147767
+stencil_mode = 1
+stencil_flags = 2
+stencil_color = Color(0.94509804, 0.9411765, 0, 1)
+stencil_outline_thickness = 0.1
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_jfigh"]
 _surfaces = [{
@@ -104,7 +112,7 @@ shadow_mesh = SubResource("ArrayMesh_jfigh")
 render_priority = 1
 transparency = 1
 shading_mode = 0
-albedo_color = Color(0.7864583, 0.77652526, 0, 1)
+albedo_color = Color(0.8862745, 0.8784314, 0, 1)
 grow = true
 grow_amount = 0.1
 stencil_mode = 3
@@ -118,6 +126,10 @@ next_pass = SubResource("StandardMaterial3D_u2kcu")
 cull_mode = 2
 albedo_color = Color(0.9064818, 0.01042614, 0, 1)
 roughness = 0.28178695
+stencil_mode = 1
+stencil_flags = 2
+stencil_color = Color(0.8862745, 0.8784314, 0, 1)
+stencil_outline_thickness = 0.1
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_o803g"]
 _surfaces = [{
@@ -154,7 +166,8 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_o803g")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j8e8v"]
-height = 1.5
+radius = 0.7
+height = 4.0
 
 [node name="Canister" type="Node3D"]
 script = ExtResource("1_j8e8v")
@@ -163,9 +176,11 @@ script = ExtResource("1_j8e8v")
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
 
 [node name="Cylinder" parent="tank" index="0"]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
 mesh = SubResource("ArrayMesh_stuy7")
 
 [node name="Circle" parent="tank" index="1"]
+transform = Transform3D(2.155818, -0.12805673, -1.259385, -1.2627043, -0.041500874, -2.1572797, 0.089595445, 2.496373, -0.10046644, -0.044213858, 3.8799615, 3.7109923)
 mesh = SubResource("ArrayMesh_hlm5w")
 
 [node name="Area3D" type="Area3D" parent="." node_paths=PackedStringArray("mesh1", "mesh2")]

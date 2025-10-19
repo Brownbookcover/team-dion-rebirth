@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://e7tmn0b0ho0w"]
+[gd_scene load_steps=34 format=4 uid="uid://e7tmn0b0ho0w"]
 
 [ext_resource type="PackedScene" uid="uid://tni8jygdmkl2" path="res://ocean_env.tscn" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://capm564lavwm3" path="res://USETHISassets/helmet_outline.tscn" id="2_6bp64"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://crgwk05tidi1n" path="res://underwater_art/uncrashed_plane_USAF_decal.png" id="11_jkdf5"]
 [ext_resource type="AudioStream" uid="uid://bc84jqa5te55f" path="res://sound/above.wav" id="12_6iyac"]
 [ext_resource type="AudioStream" uid="uid://cunsorq0lpt03" path="res://sound/plane.wav" id="13_fdnlq"]
+[ext_resource type="PackedScene" uid="uid://covgya4w2uarj" path="res://Scenes/canister.tscn" id="15_wsu2k"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8gbba"]
 lifetime_randomness = 0.11
@@ -447,3 +448,12 @@ autoplay = true
 
 [node name="Shark" parent="." instance=ExtResource("8_344ge")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 60.3814, -60.567528, 171.9231)
+
+[node name="Canister" parent="." instance=ExtResource("15_wsu2k")]
+transform = Transform3D(0.49610287, -0.113585226, -0.8608025, 0.67620754, 0.6724209, 0.30098814, 0.5446335, -0.73140204, 0.410397, -6.8701677, -44.864098, 339.85495)
+
+[node name="Canister2" parent="." instance=ExtResource("15_wsu2k")]
+transform = Transform3D(0.49610287, -0.113585226, -0.8608025, 0.67620754, 0.6724209, 0.30098814, 0.5446335, -0.73140204, 0.410397, -89.04657, -42.224773, 193.91399)
+
+[node name="Canister3" parent="." instance=ExtResource("15_wsu2k")]
+transform = Transform3D(0.49610287, -0.113585226, -0.8608025, 0.67620754, 0.6724209, 0.30098814, 0.5446335, -0.73140204, 0.410397, -54.546833, -27.8426, 154.94753)

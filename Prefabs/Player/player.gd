@@ -58,7 +58,7 @@ func _physics_process(delta: float) -> void:
 	velocity.x = new_move_vel.x
 	velocity.z = new_move_vel.z
 	
-	if Input.is_action_just_pressed("player_dash"):
+	if Input.is_action_just_pressed("player_dash") and global_position.y <= 0:
 		velocity = -pivot.transform.basis.z * stats.dash_vel
 	
 	move_and_slide()
