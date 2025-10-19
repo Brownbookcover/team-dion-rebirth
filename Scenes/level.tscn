@@ -464,11 +464,13 @@ transform = Transform3D(-7.7265635, 1.0851505, 1.3965087, 1.5993006, 1.6152062, 
 
 [node name="OmniLight3D" parent="Area1/plane_nose2" index="2"]
 transform = Transform3D(2, -5.9604645e-08, 0, 2.9802322e-08, 1.9999994, -1.7881393e-07, 2.9802322e-07, 1.3411045e-07, 1.9999998, 0.7619095, 8.463657, 1.7086029)
-elapsed = 1.046028666666668
+visible = false
+elapsed = 0.7749367777777298
 
 [node name="OmniLight3D2" parent="Area1/plane_nose2" index="3"]
 transform = Transform3D(2, -5.9604645e-08, 0, 2.9802322e-08, 1.9999994, -1.7881393e-07, 2.9802322e-07, 1.3411045e-07, 1.9999998, 0.7619095, 13.751125, 1.7085953)
-elapsed = 0
+visible = false
+elapsed = 0.2129701111111111
 
 [node name="Area3D" type="Area3D" parent="Area1"]
 script = ExtResource("10_oqgf2")

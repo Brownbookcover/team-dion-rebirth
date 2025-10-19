@@ -409,10 +409,11 @@ transform = Transform3D(0.45920777, 0, 0.8883289, 0, 1, 0, -0.8883289, 0, 0.4592
 
 [node name="OpeningManager" type="Node3D" parent="."]
 script = ExtResource("8_d1ilt")
+skip = false
 
 [node name="cam2" type="Camera3D" parent="OpeningManager"]
 unique_name_in_owner = true
-transform = Transform3D(0.990565, 0.045920264, 0.12912141, -0.017038716, 0.97614735, -0.2164396, -0.13598047, 0.21219744, 0.9677198, -31.483063, 0.71144867, -126.409424)
+transform = Transform3D(0.990565, 0.04592026, 0.1291214, -0.017038716, 0.97614735, -0.21643959, -0.13598047, 0.21219742, 0.9677198, -31.483063, 20.062477, -25.713089)
 
 [node name="cam1" type="Camera3D" parent="OpeningManager"]
 unique_name_in_owner = true
@@ -420,6 +421,7 @@ transform = Transform3D(0.46882457, -0.07451515, -0.88014275, -0.022209032, 0.99
 fov = 42.2
 
 [node name="uncrashed_plane" type="Node3D" parent="OpeningManager"]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 828.0391, 433.3208, 212.61511)
 
 [node name="Circle_001" type="MeshInstance3D" parent="OpeningManager/uncrashed_plane"]
