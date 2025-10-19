@@ -7,6 +7,7 @@ extends CharacterBody3D
 @export var jumpscare_image: Sprite2D
 var player: CharacterBody3D
 
+var player_killed = false
 
 var hunting_player = false
 var random_position: Vector3
@@ -63,4 +64,6 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player") and !player.playerSafe:
+		player_killed = true
+		%killplayer.play()
 		jumpscare_image.visible = true
