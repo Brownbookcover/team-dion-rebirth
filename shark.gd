@@ -3,7 +3,6 @@ extends CharacterBody3D
 @export var shark_move_speed := 5
 @export var shark_rotation_speed := 1
 @export var agent_shark: NavigationAgent3D
-@export var nav_region: NavigationRegion3D
 @export var jumpscare_image: Sprite2D
 var player: CharacterBody3D
 
@@ -15,6 +14,7 @@ var wander_time: float
 var target_basis: Basis
 
 func randomize_wander():
+	var nav_region=get_tree().get_nodes_in_group("nav region")[0]
 	var navigation_map_rid = nav_region.get_navigation_map()
 	random_position = NavigationServer3D.map_get_random_point(navigation_map_rid, 1, true) 
 	agent_shark.target_position = random_position

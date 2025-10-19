@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dk7orhpkfw6bc" path="res://underwater_art/shark_normal.png" id="3_6ojlb"]
 [ext_resource type="Script" uid="uid://iug3mgt01fq" path="res://USETHISassets/fish_sway.gd" id="4_p1hqx"]
 [ext_resource type="AudioStream" uid="uid://bhn0p552bi1cy" path="res://sound/Shark Growl 2.wav" id="6_6ojlb"]
-[ext_resource type="Script" uid="uid://sfcu0hm5cvs7" path="res://shark_random.gd" id="7_p1hqx"]
+[ext_resource type="Script" path="res://shark_random.gd" id="7_p1hqx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2q013"]
 cull_mode = 2
@@ -124,7 +124,7 @@ script = ExtResource("1_rwmi6")
 agent_shark = NodePath("NavigationAgent3D")
 
 [node name="goblin_shark" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.2517307, -4.4642425, -0.015761668, -0.034998145, -1.5298176e-09, -4.9998775, 4.464133, 2.251786, -0.031248044, 2.875175, 0, 0.0509733)
+transform = Transform3D(3.22122, -3.8240337, -0.022547899, -0.03499815, -1.5298176e-09, -4.9998775, 3.8239403, 3.2212992, -0.026766822, 3.482724, 0, 0.17250042)
 mesh = SubResource("ArrayMesh_sd3ew")
 skeleton = NodePath("")
 script = ExtResource("4_p1hqx")
@@ -149,7 +149,6 @@ shape = SubResource("CapsuleShape3D_6ojlb")
 
 [node name="growlplayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("6_6ojlb")
-bus = &"underwater"
 script = ExtResource("7_p1hqx")
 
 [node name="killplayer" type="AudioStreamPlayer3D" parent="."]

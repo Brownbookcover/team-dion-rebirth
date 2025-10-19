@@ -19,4 +19,4 @@ func _on_body_entered(body: Node3D) -> void:
 func make_visible_for_duration(duration: float):
 	$ShiftLabel.visible = true
 	await get_tree().create_timer(duration).timeout
-	$Label.visible = false
+	$ShiftLabel.visible = false
