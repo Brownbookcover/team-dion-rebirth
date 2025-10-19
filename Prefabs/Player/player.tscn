@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://dujj11j6fv3d1" path="res://USETHISassets/helmet.tscn" id="3_sysjd"]
 [ext_resource type="Script" path="res://Prefabs/Player/helmet.gd" id="4_21ygf"]
 [ext_resource type="AudioStream" uid="uid://d3of1kan7fare" path="res://sound/504641__fission9__underwater-ambience.wav" id="5_ine62"]
-[ext_resource type="PackedScene" uid="uid://bk3vymad8my5u" path="res://Scenes/OxygenUI.tscn" id="5_you5p"]
 [ext_resource type="Script" path="res://Prefabs/Player/underwatersounds_player.gd" id="6_ucnkw"]
 [ext_resource type="Script" path="res://Prefabs/Player/breath_manager.gd" id="8_27c8n"]
+[ext_resource type="PackedScene" uid="uid://cocjxyvep52vf" path="res://USETHISassets/gauge.tscn" id="9_a00l3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fb3t6"]
 
@@ -52,6 +52,9 @@ script = ExtResource("4_21ygf")
 [node name="helmet2" parent="Pivot/Camera3D/HelmetPivot" instance=ExtResource("3_sysjd")]
 transform = Transform3D(-1.0927847e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.0927847e-08, 0, 0, 0.1558346)
 
+[node name="Gauge" parent="Pivot/Camera3D/HelmetPivot" instance=ExtResource("9_a00l3")]
+transform = Transform3D(0.008767604, 0.0048092753, -2.102201e-10, 0, -4.371139e-10, -0.01, -0.0048092753, 0.008767604, -3.8324416e-10, -0.08133375, -0.038653016, -0.065797985)
+
 [node name="PickupRaycast" type="RayCast3D" parent="Pivot/Camera3D"]
 unique_name_in_owner = true
 target_position = Vector3(0, 0, -5)
@@ -63,10 +66,6 @@ stream = ExtResource("5_ine62")
 autoplay = true
 panning_strength = 0.0
 script = ExtResource("6_ucnkw")
-
-[node name="OxygenUi" parent="." instance=ExtResource("5_you5p")]
-unique_name_in_owner = true
-mouse_filter = 2
 
 [node name="breathManager" type="Node3D" parent="."]
 script = ExtResource("8_27c8n")
