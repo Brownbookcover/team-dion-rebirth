@@ -1,16 +1,13 @@
-[gd_resource type="AudioBusLayout" load_steps=5 format=3 uid="uid://dnqba6sfq30pu"]
+[gd_resource type="AudioBusLayout" load_steps=4 format=3 uid="uid://dnqba6sfq30pu"]
 
 [sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_j3pel"]
 resource_name = "LowPassFilter"
+cutoff_hz = 1000.0
 
 [sub_resource type="AudioEffectDelay" id="AudioEffectDelay_j3pel"]
 resource_name = "Delay"
 tap1_delay_ms = 134.0
 tap2_delay_ms = 195.0
-
-[sub_resource type="AudioEffectDelay" id="AudioEffectDelay_g28q7"]
-resource_name = "Delay"
-dry = 0.64
 
 [sub_resource type="AudioEffectDistortion" id="AudioEffectDistortion_j3pel"]
 resource_name = "Distortion"
@@ -20,7 +17,7 @@ bus/1/name = &"underwater"
 bus/1/solo = false
 bus/1/mute = false
 bus/1/bypass_fx = false
-bus/1/volume_db = 0.0
+bus/1/volume_db = -4.4202332
 bus/1/send = &"Master"
 bus/1/effect/0/effect = SubResource("AudioEffectLowPassFilter_j3pel")
 bus/1/effect/0/enabled = true
@@ -32,10 +29,8 @@ bus/2/mute = false
 bus/2/bypass_fx = false
 bus/2/volume_db = -8.52817
 bus/2/send = &"Master"
-bus/2/effect/0/effect = SubResource("AudioEffectDelay_g28q7")
-bus/2/effect/0/enabled = false
-bus/2/effect/1/effect = SubResource("AudioEffectDistortion_j3pel")
-bus/2/effect/1/enabled = true
+bus/2/effect/0/effect = SubResource("AudioEffectDistortion_j3pel")
+bus/2/effect/0/enabled = true
 bus/3/name = &"above"
 bus/3/solo = false
 bus/3/mute = false
