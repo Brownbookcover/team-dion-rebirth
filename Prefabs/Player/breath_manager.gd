@@ -10,15 +10,15 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if %OxygenUi.oxygen_level > 60:
+	if %Gauge.level_float > 0.6:
 		%breathsound1.stream_paused = false
 		%breathsound2.stream_paused = true
 		%breathsound3.stream_paused = true
-	elif %OxygenUi.oxygen_level > 30:
+	elif %Gauge.level_float > 0.30:
 		%breathsound1.stream_paused = true
 		%breathsound2.stream_paused = false
 		%breathsound3.stream_paused = true
-	elif %OxygenUi.oxygen_level < 30:
+	elif %Gauge.level_float < 0.30:
 		%breathsound1.stream_paused = true
 		%breathsound2.stream_paused = true
 		%breathsound3.stream_paused = false
