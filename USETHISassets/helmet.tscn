@@ -118,5 +118,7 @@ shadow_bias = 1.493
 
 [node name="SpotLight3D" type="SpotLight3D" parent="." index="2"]
 transform = Transform3D(-0.104563124, 0, -0.9945183, 0, 1, 0, 0.9945183, 0, -0.104563124, 1.60203, 0, 0)
+light_color = Color(1, 0.8580827, 0.7974099, 1)
+light_energy = 2.56
 spot_range = 47.28
-spot_angle = 45.48
+spot_angle = 48.84
