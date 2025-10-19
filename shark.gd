@@ -42,7 +42,7 @@ func _physics_process(delta: float) -> void:
 
 	velocity = direction.normalized() * shark_move_speed
 	print(distance_between)
-	if distance_between < 15 and !player.playerSafe:
+	if distance_between < 5 and !player.playerSafe:
 		kill_player()
 	#if direction.length_squared() > 0.001:
 		#var temp_transform = global_transform.looking_at(
