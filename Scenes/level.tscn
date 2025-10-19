@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=4 uid="uid://wluy2khqegye"]
 
-[ext_resource type="PackedScene" uid="uid://cnnqw8tn3kx7q" path="res://Scenes/Triggers.tscn" id="3_bvt00"]
+[ext_resource type="PackedScene" path="res://Scenes/Triggers.tscn" id="3_bvt00"]
 [ext_resource type="Material" uid="uid://dr1sq457ec5lx" path="res://Resources/rock_shader.tres" id="3_qxfql"]
 [ext_resource type="PackedScene" uid="uid://c0nmosye046tt" path="res://Prefabs/LevelAssets/grass_large.tscn" id="3_wqkje"]
 [ext_resource type="PackedScene" uid="uid://crfhwyhgnrivh" path="res://Prefabs/LevelAssets/grass_medium.tscn" id="4_0f350"]

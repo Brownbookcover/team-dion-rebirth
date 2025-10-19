@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://wluy2khqegye" path="res://Scenes/level.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://bodyms6upc3dw" path="res://Scenes/lighthouse.tscn" id="6_21xkr"]
 [ext_resource type="PackedScene" uid="uid://cn0ymmanhkmko" path="res://shark.tscn" id="8_344ge"]
-[ext_resource type="Script" path="res://Scenes/opening_manager.gd" id="8_d1ilt"]
+[ext_resource type="Script" uid="uid://4vcdimlghv4p" path="res://Scenes/opening_manager.gd" id="8_d1ilt"]
 [ext_resource type="Texture2D" uid="uid://6msfqnomv8d3" path="res://underwater_art/uncrashed_plane_canvas.png" id="9_6iyac"]
 [ext_resource type="Texture2D" uid="uid://cvrdnlag4bxna" path="res://underwater_art/uncrashed_plane_plane_floor.png" id="10_fdnlq"]
 [ext_resource type="Texture2D" uid="uid://crgwk05tidi1n" path="res://underwater_art/uncrashed_plane_USAF_decal.png" id="11_jkdf5"]
@@ -377,11 +377,11 @@ visible = false
 depth = 1.41
 
 [node name="HelmetOutline" parent="." instance=ExtResource("2_6bp64")]
-transform = Transform3D(0.097452015, 7.825655e-09, -2.4980998, 1.418638, 2.0577662, 0.055341735, 2.0562024, -1.4197167, 0.0802134, -19.213957, 37.855614, 432.42538)
+transform = Transform3D(0.097452015, 7.825655e-09, -2.4980998, 1.418638, 2.0577662, 0.055341735, 2.0562024, -1.4197167, 0.0802134, -19.214, 73.20215, 432.425)
 
 [node name="Player" parent="." instance=ExtResource("2_jjvhh")]
 unique_name_in_owner = true
-transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -15.128689, 80.298836, 497.861)
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -11.298302, 113.00807, 493.25372)
 
 [node name="oceanDust" type="GPUParticles3D" parent="Player"]
 unique_name_in_owner = true
@@ -403,7 +403,7 @@ helmet_width = 0.495
 helmet_offset = Vector3(0.005, 0, -0.345)
 
 [node name="Level" parent="." instance=ExtResource("5_kry3j")]
-transform = Transform3D(0.08115567, 0, 0.9967014, 0, 1, 0, -0.9967014, 0, 0.08115567, 0, -35.642, 134.11261)
+transform = Transform3D(0.08115567, 0, 0.9967014, 0, 1, 0, -0.9967014, 0, 0.08115567, 0.05, 0, 134.111)
 
 [node name="Lighthouse" parent="." instance=ExtResource("6_21xkr")]
 transform = Transform3D(0.45920777, 0, 0.8883289, 0, 1, 0, -0.8883289, 0, 0.45920777, -6.6425476, 94.90275, -365.9185)
@@ -446,4 +446,4 @@ volume_db = 22.917
 autoplay = true
 
 [node name="Shark" parent="." instance=ExtResource("8_344ge")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60.3814, -60.567528, 171.9231)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 60.3814, -60.567528, 171.9231)

@@ -55,10 +55,11 @@ func _physics_process(delta: float) -> void:
 	if direction.length_squared() > 0.001:
 		target_basis = global_transform.looking_at(next_path_position, Vector3.UP).basis
 
-	var current_basis = global_transform.basis
-	var smoothed_basis = current_basis.slerp(target_basis, delta * shark_rotation_speed)
-
+	var current_basis = global_transform.basis.orthonormalized()
+	var smoothed_basis = current_basis.slerp(target_basis, delta * shark_rotation_speed).orthonormalized()
+	
 	global_transform.basis = smoothed_basis
+	scale = Vector3(3, 3, 3)
 	move_and_slide()
 
 
