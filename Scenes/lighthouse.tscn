@@ -100,7 +100,7 @@ shadow_mesh = SubResource("ArrayMesh_ejxau")
 [node name="Lighthouse" type="Node3D"]
 
 [node name="LighthouseLight" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.8857527, 0, 0.4641571, 0, 1, 0, -0.46415707, 0, -0.88575274, 0, 0, 0)
+transform = Transform3D(-0.75554323, 0, -0.6550986, 0, 1, 0, 0.65509856, 0, -0.75554323, 0, 0, 0)
 light_energy = 0.2
 light_indirect_energy = 0.395
 light_volumetric_fog_energy = 0.415
@@ -114,7 +114,7 @@ mesh = SubResource("ArrayMesh_3v32o")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="LighthouseLight"]
-transform = Transform3D(-1.3113417e-05, 0, 300, 0, 300, 0, -300, 0, -1.3113417e-05, 0, 4.5617747, 0)
+transform = Transform3D(-102.95277, 0, 281.78134, 0, 300, 0, -281.78134, 0, -102.952774, 0, 0.69215345, 0)
 mesh = SubResource("ArrayMesh_qu26u")
 
 [node name="lighthouse" parent="." instance=ExtResource("2_3v32o")]
