@@ -40,7 +40,7 @@ depth = 1.41
 
 [node name="Player" parent="." instance=ExtResource("2_jjvhh")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.885352, 32.99643, 266.0244)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6967883, 46.592354, 295.6617)
 
 [node name="oceanDust" type="GPUParticles3D" parent="Player"]
 unique_name_in_owner = true

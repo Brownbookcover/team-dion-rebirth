@@ -8,5 +8,6 @@ extends Resource
 @export var move_decel: float
 
 @export var gravity_accel: float
-
 @export var jump_velocity: float
+
+@export var dash_vel: float

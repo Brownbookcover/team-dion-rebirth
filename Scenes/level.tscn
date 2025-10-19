@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://cj73phkjp1bpx" path="res://Prefabs/LevelAssets/grass_small.tscn" id="5_8c0lf"]
 [ext_resource type="PackedScene" uid="uid://dowsqx6c84wcj" path="res://Prefabs/LevelAssets/tank_prefab.tscn" id="6_0f350"]
 [ext_resource type="PackedScene" uid="uid://cyeci2lwwektq" path="res://USETHISassets/plane.tscn" id="7_8c0lf"]
-[ext_resource type="PackedScene" uid="uid://bi1dkuufhqmpl" path="res://underwater_art/crate.blend" id="8_754fn"]
 [ext_resource type="PackedScene" uid="uid://n4ff4a345yos" path="res://USETHISassets/nose.tscn" id="9_bvt00"]
+[ext_resource type="PackedScene" uid="uid://bm8rlognigo8a" path="res://USETHISassets/crate.tscn" id="9_pa6b8"]
 [ext_resource type="PackedScene" uid="uid://bp013ucuskf7a" path="res://Scenes/area1.tscn" id="11_qxfql"]
 [ext_resource type="PackedScene" uid="uid://drucq3s7ov0qm" path="res://USETHISassets/fish.tscn" id="12_ha31o"]
 
@@ -172,26 +172,26 @@ transform = Transform3D(0.85243946, 0.5228259, 0, -0.5103814, 0.8321494, -0.2168
 [node name="Node3D2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -139.19673, 71.2676, -1.2741088)
 
-[node name="crate2" parent="Node3D2" instance=ExtResource("8_754fn")]
-transform = Transform3D(0.88691705, 0.4573789, 0.06467557, -0.42856976, 0.86700225, -0.25423428, -0.1723553, 0.19776665, 0.9649777, -0.37300873, -0.87397766, 0.071430326)
+[node name="crate3" parent="Node3D2" instance=ExtResource("9_pa6b8")]
+transform = Transform3D(0.88691694, 0.45737883, 0.064675644, -0.4285697, 0.8670023, -0.25423425, -0.1723553, 0.19776665, 0.96497774, -0.37300873, -0.87397766, 0.071430326)
 
 [node name="Node3D3" type="Node3D" parent="."]
 transform = Transform3D(0.9911531, 0.13272347, 0, -0.13272347, 0.9911531, 0, 0, 0, 1, -145.04619, 73.94987, -1.2741088)
 
-[node name="crate2" parent="Node3D3" instance=ExtResource("8_754fn")]
-transform = Transform3D(0.88691705, 0.4573789, 0.06467557, -0.42856976, 0.86700225, -0.25423428, -0.1723553, 0.19776665, 0.9649777, -0.37300873, -0.87397766, 0.071430326)
+[node name="crate3" parent="Node3D3" instance=ExtResource("9_pa6b8")]
+transform = Transform3D(0.88691694, 0.45737883, 0.064675644, -0.4285697, 0.8670023, -0.25423425, -0.1723553, 0.19776665, 0.96497774, -0.37300873, -0.87397766, 0.071430326)
 
 [node name="Node3D4" type="Node3D" parent="."]
 transform = Transform3D(0.9911531, 0.13272347, 0, -0.13272347, 0.9911531, 0, 0, 0, 1, -158.52837, 82.43796, 2.3824835)
 
-[node name="crate2" parent="Node3D4" instance=ExtResource("8_754fn")]
-transform = Transform3D(0.88691705, 0.4573789, 0.06467557, -0.42856976, 0.86700225, -0.25423428, -0.1723553, 0.19776665, 0.9649777, -0.37300873, -0.87397766, 0.071430326)
+[node name="crate3" parent="Node3D4" instance=ExtResource("9_pa6b8")]
+transform = Transform3D(0.88691694, 0.45737883, 0.064675644, -0.4285697, 0.8670023, -0.25423425, -0.1723553, 0.19776665, 0.96497774, -0.37300873, -0.87397766, 0.071430326)
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125.141266, 60.70849, 1.5001223)
 
-[node name="crate2" parent="Node3D" instance=ExtResource("8_754fn")]
-transform = Transform3D(0.88691705, 0.4573789, 0.06467557, -0.42856976, 0.86700225, -0.25423428, -0.1723553, 0.19776665, 0.9649777, -0.37300873, -0.87397766, 0.071430326)
+[node name="crate3" parent="Node3D" instance=ExtResource("9_pa6b8")]
+transform = Transform3D(0.88691694, 0.45737883, 0.064675644, -0.4285697, 0.8670023, -0.25423425, -0.1723553, 0.19776665, 0.96497774, -0.37300873, -0.87397766, 0.071430326)
 
 [node name="plane_nose" parent="." instance=ExtResource("9_bvt00")]
 transform = Transform3D(-0.19028376, 0.24253833, -0.95129776, -0.11908958, 0.9561438, 0.26759478, 0.97447926, 0.16420859, -0.15305483, -50.643726, -28.113142, 21.789331)

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bhe4nu6whttmw" path="res://underwater_art/USAF_decal.png" id="2_7xkdu"]
 [ext_resource type="Texture2D" uid="uid://cx5882yos2iae" path="res://underwater_art/canvas.png" id="3_1pjrr"]
 [ext_resource type="Texture2D" uid="uid://2ank8038b5pr" path="res://underwater_art/plane_floor.png" id="4_ia4ti"]
-[ext_resource type="Script" uid="uid://bsobha1gtyi4q" path="res://USETHISassets/flashing_lights.gd" id="5_1pjrr"]
+[ext_resource type="Script" path="res://USETHISassets/flashing_lights.gd" id="5_1pjrr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_41k2m"]
 resource_name = "BODY"
@@ -593,7 +593,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_myuta")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7xkdu"]
-size = Vector3(0.049316406, 6.9608765, 1.6054077)
+size = Vector3(0.049, 6.6000977, 1.605)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ua8pp"]
 _surfaces = [{
@@ -714,8 +714,12 @@ shape = SubResource("BoxShape3D_7xkdu")
 transform = Transform3D(-0.2854395, 7.6618605e-08, -0.95840394, 7.6618605e-08, 1.0000074, 5.7125323e-08, 0.95840394, -5.7125327e-08, -0.2854395, 0.4832284, -3.360195, -0.77146363)
 shape = SubResource("BoxShape3D_7xkdu")
 
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="plane_body/Circle_001/StaticBody3D"]
+transform = Transform3D(0.21414606, -0.012894585, -0.97672427, 0.9764758, -0.023300832, 0.2143992, -0.025522918, -0.9996534, 0.0076013855, 0.29293576, -6.7840614, 0.20965727)
+shape = SubResource("BoxShape3D_7xkdu")
+
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="plane_body/Circle_001/StaticBody3D"]
-transform = Transform3D(1.0000033, 0, 0, 0, 1.0000033, 0, 0, 0, 1.0000033, 0.720303, -3.5582108, 0.026275726)
+transform = Transform3D(1.0000033, 0, 0, 0, 1.0000033, 0, 0, 0, 1.0000033, 0.7203033, -3.5149977, 0.026275726)
 shape = SubResource("BoxShape3D_7xkdu")
 
 [node name="Plane" type="Node3D" parent="plane_body"]
@@ -727,8 +731,8 @@ mesh = SubResource("ArrayMesh_ygtqv")
 skeleton = NodePath("")
 
 [node name="flashing lights" type="Node3D" parent="."]
-visible = false
 script = ExtResource("5_1pjrr")
+elapsed = 0.016666666666666666
 
 [node name="SpotLight3D" type="SpotLight3D" parent="flashing lights"]
 transform = Transform3D(1, 0, 0, 0, 0.021884676, 0.9997605, 0, -0.9997605, 0.021884676, -9.696094, 6.815444, 0)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=4 uid="uid://capm564lavwm3"]
+[gd_scene load_steps=14 format=4 uid="uid://capm564lavwm3"]
 
 [ext_resource type="PackedScene" uid="uid://faiuy4jqk6e0" path="res://underwater_art/helmet.blend" id="1_oa8f1"]
 [ext_resource type="Texture2D" uid="uid://bmqbr52fkv31m" path="res://underwater_art/helment_map.png" id="2_7bie5"]
+[ext_resource type="Script" uid="uid://c1wqv4p0flgvb" path="res://USETHISassets/pickup.gd" id="3_7bie5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oa8f1"]
 render_priority = 1
@@ -114,7 +115,10 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rf1wn")
 
-[node name="helmet2" instance=ExtResource("1_oa8f1")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_oa8f1"]
+size = Vector3(3, 3, 3)
+
+[node name="HelmetOutline" instance=ExtResource("1_oa8f1")]
 
 [node name="helmet" parent="." index="0"]
 layers = 2
@@ -131,3 +135,10 @@ light_volumetric_fog_energy = 0.0
 light_size = 0.435
 light_bake_mode = 0
 shadow_bias = 1.493
+
+[node name="Area3D" type="Area3D" parent="." index="2" node_paths=PackedStringArray("mesh")]
+script = ExtResource("3_7bie5")
+mesh = NodePath("../helmet")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+shape = SubResource("BoxShape3D_oa8f1")

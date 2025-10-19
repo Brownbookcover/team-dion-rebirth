@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="PlayerStats" load_steps=2 format=3 uid="uid://dd2s4vs3ml5f8"]
+
+[ext_resource type="Script" uid="uid://eeu2dk810kpv" path="res://Resources/PlayerStats/player_stats.gd" id="1_32ato"]
+
+[resource]
+script = ExtResource("1_32ato")
+camera_impedance = 20.0
+max_move_vel = 4.0
+move_accel = 2.0
+move_decel = 8.0
+gravity_accel = -5.0
+jump_velocity = 4.0
+dash_vel = 25.0
+metadata/_custom_type_script = "uid://eeu2dk810kpv"

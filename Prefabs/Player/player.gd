@@ -3,6 +3,8 @@ extends CharacterBody3D
 @onready var pivot := $Pivot
 @onready var camera := $Pivot/Camera3D
 
+@onready var pickup_raycast: RayCast3D = %PickupRaycast
+
 @export var stats: PlayerStats
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -18,6 +20,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	_handle_pickup()
+	
 	if not is_on_floor():
 		velocity.y += stats.gravity_accel * delta
 	
@@ -46,4 +50,14 @@ func _physics_process(delta: float) -> void:
 	velocity.x = new_move_vel.x
 	velocity.z = new_move_vel.z
 	
+	if Input.is_action_just_pressed("player_dash"):
+		velocity = -pivot.transform.basis.z * stats.dash_vel
+	
 	move_and_slide()
+
+
+func _handle_pickup():
+	var collision = pickup_raycast.get_collider()
+	
+	if collision and collision is Pickup:
+		collision.hover()
