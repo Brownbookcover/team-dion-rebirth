@@ -1,36 +1,34 @@
 [gd_scene load_steps=7 format=3 uid="uid://cn0ymmanhkmko"]
 
 [ext_resource type="Script" uid="uid://nmnu5tlvqqqn" path="res://shark.gd" id="1_rwmi6"]
-[ext_resource type="Script" uid="uid://cv4kfs174h5us" path="res://States/state_machine.gd" id="2_d5pdq"]
-[ext_resource type="Script" uid="uid://bkba1flvhyfas" path="res://States/state_idle.gd" id="3_k17ol"]
-[ext_resource type="Script" uid="uid://dyqqlg1jl21y7" path="res://States/state_chase.gd" id="4_uce6o"]
+[ext_resource type="Texture2D" uid="uid://d1ltfpggjtx13" path="res://chica.png" id="2_d5pdq"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xetws"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_rwmi6"]
 
-[node name="Shark" type="CharacterBody3D"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k17ol"]
+albedo_texture = ExtResource("2_d5pdq")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_d5pdq"]
+radius = 0.75
+
+[node name="Shark" type="CharacterBody3D" node_paths=PackedStringArray("agent_shark")]
 script = ExtResource("1_rwmi6")
+agent_shark = NodePath("NavigationAgent3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_xetws")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_rwmi6")
-
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
-script = ExtResource("2_d5pdq")
-initial_state = NodePath("StateChase")
-
-[node name="IdleState" type="Node" parent="StateMachine" node_paths=PackedStringArray("shark")]
-script = ExtResource("3_k17ol")
-shark = NodePath("../..")
-metadata/_custom_type_script = "uid://bkba1flvhyfas"
-
-[node name="StateChase" type="Node" parent="StateMachine" node_paths=PackedStringArray("shark", "agent_shark")]
-script = ExtResource("4_uce6o")
-shark = NodePath("../..")
-agent_shark = NodePath("../../NavigationAgent3D")
-metadata/_custom_type_script = "uid://dyqqlg1jl21y7"
+surface_material_override/0 = SubResource("StandardMaterial3D_k17ol")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_d5pdq")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
