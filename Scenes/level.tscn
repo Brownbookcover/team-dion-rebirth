@@ -427,6 +427,24 @@ transform = Transform3D(2.9950843, -5.5673018, 7.5932026, -4.444924, -5.8313956,
 [node name="plane_nose" parent="Area1" instance=ExtResource("9_bvt00")]
 transform = Transform3D(-0.19028376, 0.24253833, -0.95129776, -0.11908958, 0.9561438, 0.26759478, 0.97447926, 0.16420859, -0.15305483, -55.22586, 24.403519, 23.86846)
 
+[node name="plane_nose2" parent="Area1" instance=ExtResource("9_bvt00")]
+transform = Transform3D(0.76110554, 0.26098496, -0.5938058, -0.11908959, 0.9561438, 0.26759478, 0.63760173, -0.1329518, 0.7588068, 303.46185, 54.306168, -113.82498)
+
+[node name="NOSE_001" parent="Area1/plane_nose2" index="0"]
+visible = false
+
+[node name="Circle_002" parent="Area1/plane_nose2" index="1"]
+transform = Transform3D(-7.7265635, 1.0851505, 1.3965087, 1.5993006, 1.6152062, 7.5934772, 0.7549987, 7.6838202, -1.7934372, -2.525917, 6.629513, 1.4419937)
+
+[node name="OmniLight3D" parent="Area1/plane_nose2" index="2"]
+transform = Transform3D(2, -5.9604645e-08, 0, 2.9802322e-08, 1.9999994, -1.7881393e-07, 2.9802322e-07, 1.3411045e-07, 1.9999998, 0.7619095, 8.463657, 1.7086029)
+visible = false
+elapsed = 0.35843077777777743
+
+[node name="OmniLight3D2" parent="Area1/plane_nose2" index="3"]
+transform = Transform3D(2, -5.9604645e-08, 0, 2.9802322e-08, 1.9999994, -1.7881393e-07, 2.9802322e-07, 1.3411045e-07, 1.9999998, 0.7619095, 13.751125, 1.7085953)
+elapsed = 0.46954188888888815
+
 [node name="Area3D" type="Area3D" parent="Area1"]
 script = ExtResource("10_oqgf2")
 
@@ -563,3 +581,4 @@ shape = SubResource("ConvexPolygonShape3D_oqgf2")
 [connection signal="body_entered" from="Area1/JumpscareTrigger" to="Area1/StaticBody3D" method="_on_jumpscare_trigger_body_entered"]
 
 [editable path="Plane/TriggerZone"]
+[editable path="Area1/plane_nose2"]
