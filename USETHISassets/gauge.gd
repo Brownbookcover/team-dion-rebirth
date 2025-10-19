@@ -2,6 +2,7 @@
 extends Node3D
 
 @export var level_float = 0.5
+var start_oxygen = false
 var time_passed = 0.0
 
 # Called when the node enters the scene tree for the first time.
@@ -14,7 +15,8 @@ func _process(delta: float) -> void:
 	%needle.rotation_degrees.y = lerp(400, 140, level_float)
 
 func _physics_process(delta: float) -> void:
-	time_passed += delta
-	if time_passed >= 1.0:
-		level_float -= .01
-		time_passed = 0.0
+	if start_oxygen:
+		time_passed += delta
+		if time_passed >= 1.0:
+			level_float -= .01
+			time_passed = 0.0

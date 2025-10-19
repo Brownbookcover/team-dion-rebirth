@@ -91,11 +91,13 @@ func _handle_pickup():
 
 func _equip_helmet():
 	helmet_model.visible = true
+	$Pivot/Camera3D/HelmetPivot/Gauge.start_oxygen=true
 	stats = load("res://Resources/PlayerStats/suit_player_stats.tres")
 
 
 func _unequip_helmet():
 	helmet_model.visible = true
+	$Pivot/Camera3D/HelmetPivot/Gauge.start_oxygen=false
 	stats = load("res://Resources/PlayerStats/default_player_stats.tres")
 
 
