@@ -731,32 +731,33 @@ mesh = SubResource("ArrayMesh_ygtqv")
 skeleton = NodePath("")
 
 [node name="flashing lights" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.021283627, 0)
 script = ExtResource("5_1pjrr")
-elapsed = 0.016666666666666666
+elapsed = 0.15352911111131173
 
 [node name="SpotLight3D" type="SpotLight3D" parent="flashing lights"]
-transform = Transform3D(1, 0, 0, 0, 0.021884676, 0.9997605, 0, -0.9997605, 0.021884676, -9.696094, 6.815444, 0)
+transform = Transform3D(1, 0, 0, 0, 0.021884676, 0.9997605, 0, -0.9997605, 0.021884676, -9.696094, 5.25154, 0)
 light_color = Color(1, 0.15710741, 0, 1)
-light_energy = 200.0
+light_energy = 400.0
 shadow_enabled = true
-spot_range = 16.240887
-spot_angle = 31.73
+spot_range = 38.844
+spot_angle = 44.79
 spot_angle_attenuation = 5.0982456
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="flashing lights"]
-transform = Transform3D(1, 0, 0, 0, 0.021884676, 0.9997605, 0, -0.9997605, 0.021884676, -27.183958, 6.815444, 0)
+transform = Transform3D(1, 0, 0, 0, 0.021884676, 0.9997605, 0, -0.9997605, 0.021884676, -27.183958, 5.25154, 0)
 light_color = Color(1, 0.15710741, 0, 1)
-light_energy = 200.0
+light_energy = 400.0
 shadow_enabled = true
-spot_range = 16.240887
-spot_angle = 31.73
+spot_range = 38.844
+spot_angle = 44.79
 spot_angle_attenuation = 5.0982456
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="flashing lights"]
-transform = Transform3D(1, 0, 0, 0, 0.021884676, 0.9997605, 0, -0.9997605, 0.021884676, -43.16895, 6.815444, 0)
+transform = Transform3D(1, 0, 0, 0, 0.021884676, 0.9997605, 0, -0.9997605, 0.021884676, -43.16895, 5.25154, 0)
 light_color = Color(1, 0.15710741, 0, 1)
-light_energy = 200.0
+light_energy = 400.0
 shadow_enabled = true
-spot_range = 16.240887
-spot_angle = 31.73
+spot_range = 38.844
+spot_angle = 44.79
 spot_angle_attenuation = 5.0982456
