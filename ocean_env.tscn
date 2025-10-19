@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://4di26i8njmu8" path="res://ocean_env.gd" id="1_x3dbg"]
 [ext_resource type="Texture2D" uid="uid://bntbm1qtctx3o" path="res://underwater_art/qwantani_moon_noon_puresky_1k.hdr" id="2_o47wn"]
 [ext_resource type="Shader" uid="uid://cg4s3uwo27yik" path="res://above_ocean.gdshader" id="4_o47wn"]
-[ext_resource type="Shader" uid="uid://bx71gfd6iyl7g" path="res://below_water_surface.tres" id="5_m74tm"]
+[ext_resource type="Shader" uid="uid://cljsjqv4qnbup" path="res://below_water_surface.tres" id="5_m74tm"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_o47wn"]
 panorama = ExtResource("2_o47wn")
@@ -18,13 +18,14 @@ background_color = Color(1, 1, 1, 1)
 sky = SubResource("Sky_m74tm")
 glow_enabled = true
 glow_intensity = 6.64
-glow_strength = 0.0
+glow_strength = 0.2
 glow_bloom = 0.25
 glow_blend_mode = 4
 fog_enabled = true
-fog_light_color = Color(0.15686275, 0.18431373, 0.52156866, 1)
-fog_light_energy = 2.0
-fog_density = 0.0
+fog_mode = 1
+fog_light_color = Color(1, 1, 1, 1)
+fog_light_energy = 0.02
+fog_density = 0.8393
 fog_sky_affect = 0.243
 adjustment_enabled = true
 
@@ -117,7 +118,7 @@ size = Vector2(1000, 1000)
 
 [node name="OceanEnv" type="Node3D"]
 script = ExtResource("1_x3dbg")
-depth = 0.71
+depth = 0.255
 
 [node name="oceanWorldEnv" type="WorldEnvironment" parent="."]
 unique_name_in_owner = true
