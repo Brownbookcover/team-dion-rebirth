@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bn74k6cm2k5b1"
+path="res://.godot/imported/Water Sound Shark Near_.wav-47aeeba23995dd153fb9441c38edde7c.sample"
+
+[deps]
+
+source_file="res://sound/Water Sound Shark Near_.wav"
+dest_files=["res://.godot/imported/Water Sound Shark Near_.wav-47aeeba23995dd153fb9441c38edde7c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
