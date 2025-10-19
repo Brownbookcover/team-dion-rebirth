@@ -6,6 +6,7 @@ extends CharacterBody3D
 @onready var pickup_raycast: RayCast3D = %PickupRaycast
 
 @export var stats: PlayerStats
+var playerSafe: bool = false
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -61,3 +62,13 @@ func _handle_pickup():
 	
 	if collision and collision is Pickup:
 		collision.hover()
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body == self:
+		playerSafe = true
+
+
+func _on_area_3d_body_exited(body: Node3D) -> void:
+	if body == self:
+		playerSafe = false
