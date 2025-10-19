@@ -84,9 +84,9 @@ func _handle_pickup():
 		
 		if pickup_name == "helmet":
 			_equip_helmet()
-			
+		
 		if pickup_name == "canister":
-			$OxygenUi.oxygen_level = 100
+			$Pivot/Camera3D/HelmetPivot/Gauge.level_float = 1.0
 
 
 func _equip_helmet():

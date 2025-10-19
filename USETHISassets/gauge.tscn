@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://bro0vokfmjalf"]
+[gd_scene load_steps=12 format=4 uid="uid://cocjxyvep52vf"]
 
 [ext_resource type="Script" uid="uid://bph680pu0oljq" path="res://USETHISassets/gauge.gd" id="1_4p5my"]
 
@@ -164,7 +164,6 @@ shadow_mesh = SubResource("ArrayMesh_as1ty")
 
 [node name="Gauge" type="Node3D"]
 script = ExtResource("1_4p5my")
-level_float = 1.0
 
 [node name="gauge" type="Node3D" parent="."]
 
@@ -175,7 +174,7 @@ skeleton = NodePath("")
 
 [node name="needle" type="MeshInstance3D" parent="gauge"]
 unique_name_in_owner = true
-transform = Transform3D(-0.058014978, 0, 0.04868035, 0, 0.07573319, 0, -0.04868035, 0, -0.058014978, 0, -0.080504194, 0)
+transform = Transform3D(0.058014978, 0, 0.04868035, 0, 0.07573319, 0, -0.04868035, 0, 0.058014978, 0, -0.080504194, 0)
 mesh = SubResource("ArrayMesh_ylt60")
 skeleton = NodePath("")
 
