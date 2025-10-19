@@ -5,9 +5,12 @@
 [resource]
 script = ExtResource("1_dmxg1")
 camera_impedance = 5.0
-max_move_vel = 8.0
-move_accel = 10.0
+camera_min_pitch = -30.0
+camera_max_pitch = 60.0
+max_move_vel = 5.0
+move_accel = 6.0
 move_decel = 15.0
 gravity_accel = -12.0
+water_gravity_accel = -8.0
 jump_velocity = 4.0
 metadata/_custom_type_script = "uid://eeu2dk810kpv"

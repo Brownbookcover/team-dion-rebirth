@@ -21,14 +21,17 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event is InputEventMouseMotion:
 			pivot.rotate_y(-event.relative.x * 0.01 / stats.camera_impedance)
 			camera.rotate_x(-event.relative.y * 0.01 / stats.camera_impedance)
-			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-30), deg_to_rad(60))
+			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(stats.camera_min_pitch), deg_to_rad(stats.camera_max_pitch))
 
 
 func _physics_process(delta: float) -> void:
 	_handle_pickup()
 	
 	if not is_on_floor():
-		velocity.y += stats.gravity_accel * delta
+		if global_position.y > 0:
+			velocity.y += stats.gravity_accel * delta
+		else:
+			velocity.y += stats.water_gravity_accel * delta
 	
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = stats.jump_velocity
