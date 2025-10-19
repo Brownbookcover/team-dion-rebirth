@@ -117,7 +117,7 @@ script = ExtResource("1_rwmi6")
 agent_shark = NodePath("NavigationAgent3D")
 
 [node name="goblin_shark" type="MeshInstance3D" parent="."]
-transform = Transform3D(6.5566013e-07, -5, -3.051611e-09, -0.03490636, -1.5258055e-09, -4.999878, 4.999878, 6.5566553e-07, -0.03490636, 0.898592, 0, -0.34434316)
+transform = Transform3D(-0.500443, -4.974891, 0.0035030034, -0.034998145, -1.5298176e-09, -4.9998775, 4.974769, -0.50045526, -0.034822397, 1.2289159, 0, -0.27827713)
 mesh = SubResource("ArrayMesh_sd3ew")
 skeleton = NodePath("")
 script = ExtResource("4_p1hqx")
@@ -125,6 +125,7 @@ script = ExtResource("4_p1hqx")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 1.739, 0, 0)
 shape = SubResource("CapsuleShape3D_l26on")
+disabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 visible = false

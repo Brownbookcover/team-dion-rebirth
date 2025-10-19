@@ -17,3 +17,4 @@ func _process(delta: float) -> void:
 	
 	position.x += sin(elapsed) * 0.005
 	position.z += sin(elapsed) * 0.001
+	rotation_degrees.y += sin(elapsed) * 0.1

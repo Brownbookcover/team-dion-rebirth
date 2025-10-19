@@ -41,13 +41,18 @@ func _physics_process(delta: float) -> void:
 
 	velocity = direction.normalized() * shark_move_speed
 
+	#if direction.length_squared() > 0.001:
+		#var temp_transform = global_transform.looking_at(
+			#global_position + direction.normalized(), 
+			#Vector3.UP, 
+			#false
+		#)
+		#target_basis = temp_transform.basis
+
+	# look_at(Vector3(0, player.position.y + global_position.y, 0), Vector3.UP)
+
 	if direction.length_squared() > 0.001:
-		var temp_transform = global_transform.looking_at(
-			global_position + direction.normalized(), 
-			Vector3.UP, 
-			false
-		)
-		target_basis = temp_transform.basis
+		target_basis = global_transform.looking_at(next_path_position, Vector3.UP).basis
 
 	var current_basis = global_transform.basis
 	var smoothed_basis = current_basis.slerp(target_basis, delta * shark_rotation_speed)
