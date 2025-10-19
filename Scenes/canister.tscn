@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=4 uid="uid://bm5nvaw4ukuv5"]
+[gd_scene load_steps=15 format=4 uid="uid://bm5nvaw4ukuv5"]
 
 [ext_resource type="Script" uid="uid://cev4f2bjjb043" path="res://Scenes/canister.gd" id="1_j8e8v"]
 [ext_resource type="PackedScene" uid="uid://b72jm1irmdtby" path="res://underwater_art/tank.blend" id="2_y4bj8"]
+[ext_resource type="Script" uid="uid://c1wqv4p0flgvb" path="res://USETHISassets/pickup.gd" id="3_bo744"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bo744"]
 render_priority = 1
@@ -167,11 +168,13 @@ mesh = SubResource("ArrayMesh_stuy7")
 [node name="Circle" parent="tank" index="1"]
 mesh = SubResource("ArrayMesh_hlm5w")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." node_paths=PackedStringArray("mesh1", "mesh2")]
+script = ExtResource("3_bo744")
+pickup_name = "canister"
+mesh1 = NodePath("../tank/Cylinder")
+mesh2 = NodePath("../tank/Circle")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("CapsuleShape3D_j8e8v")
-
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 
 [editable path="tank"]
