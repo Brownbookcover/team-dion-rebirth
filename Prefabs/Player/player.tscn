@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b435oqniqce3h"]
+[gd_scene load_steps=9 format=3 uid="uid://b435oqniqce3h"]
 
 [ext_resource type="Script" uid="uid://bq4xu8qu2ermt" path="res://Prefabs/Player/player.gd" id="1_iwpo4"]
 [ext_resource type="Resource" uid="uid://shgqrutwc61y" path="res://Resources/PlayerStats/default_player_stats.tres" id="2_hnwp3"]
 [ext_resource type="PackedScene" uid="uid://dujj11j6fv3d1" path="res://USETHISassets/helmet.tscn" id="3_sysjd"]
-[ext_resource type="Script" path="res://Prefabs/Player/helmet.gd" id="4_21ygf"]
+[ext_resource type="Script" uid="uid://kh4akc2wsvdo" path="res://Prefabs/Player/helmet.gd" id="4_21ygf"]
+[ext_resource type="AudioStream" uid="uid://d3of1kan7fare" path="res://sound/504641__fission9__underwater-ambience.wav" id="5_you5p"]
+[ext_resource type="Script" uid="uid://qcqtfbl7b53j" path="res://Prefabs/Player/underwatersounds_player.gd" id="6_ucnkw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fb3t6"]
 
@@ -41,3 +43,10 @@ unique_name_in_owner = true
 target_position = Vector3(0, 0, -5)
 collide_with_areas = true
 collide_with_bodies = false
+
+[node name="underwatersounds_player" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_you5p")
+autoplay = true
+panning_strength = 0.0
+bus = &"underwater"
+script = ExtResource("6_ucnkw")
