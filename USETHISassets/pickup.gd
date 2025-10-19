@@ -6,9 +6,8 @@ extends Area3D
 @export var mesh: MeshInstance3D
 
 func hover():
-	print("hover")
 	mesh.mesh.surface_get_material(0).next_pass.albedo_color = Color.WHITE
 
 
 func unhover():
-	pass
+	mesh.mesh.surface_get_material(0).next_pass.albedo_color = Color.YELLOW

@@ -138,6 +138,7 @@ shadow_bias = 1.493
 
 [node name="Area3D" type="Area3D" parent="." index="2" node_paths=PackedStringArray("mesh")]
 script = ExtResource("3_7bie5")
+pickup_name = "helmet"
 mesh = NodePath("../helmet")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]

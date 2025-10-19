@@ -29,6 +29,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44507125, -0.3716377)
 [node name="Camera3D" type="Camera3D" parent="Pivot"]
 
 [node name="HelmetPivot" type="Node3D" parent="Pivot/Camera3D"]
+unique_name_in_owner = true
+visible = false
 script = ExtResource("4_21ygf")
 
 [node name="helmet2" parent="Pivot/Camera3D/HelmetPivot" instance=ExtResource("3_sysjd")]

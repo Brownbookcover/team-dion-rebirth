@@ -5,8 +5,12 @@ extends CharacterBody3D
 
 @onready var pickup_raycast: RayCast3D = %PickupRaycast
 
+@onready var helmet_model: Node3D = %HelmetPivot
+
 @export var stats: PlayerStats
 var playerSafe: bool = false
+
+var hovering_pickable: Pickup = null
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -60,8 +64,27 @@ func _physics_process(delta: float) -> void:
 func _handle_pickup():
 	var collision = pickup_raycast.get_collider()
 	
-	if collision and collision is Pickup:
+	if collision is Pickup and collision != hovering_pickable:
+		if hovering_pickable != null:
+			hovering_pickable.unhover()
+		
 		collision.hover()
+		hovering_pickable = collision
+	elif collision == null and hovering_pickable != null:
+		hovering_pickable.unhover()
+		hovering_pickable = null
+	
+	if Input.is_action_just_pressed("pick_up") and hovering_pickable != null:
+		var pickup_name = hovering_pickable.pickup_name
+		hovering_pickable.get_parent().queue_free()
+		hovering_pickable = null
+		
+		if pickup_name == "helmet":
+			_equip_helmet()
+
+
+func _equip_helmet():
+	helmet_model.visible = true
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
