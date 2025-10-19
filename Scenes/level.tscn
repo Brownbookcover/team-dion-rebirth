@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=4 uid="uid://wluy2khqegye"]
 
-[ext_resource type="Shader" uid="uid://ct44mm88587q8" path="res://sand.tres" id="1_tumq0"]
+[ext_resource type="Shader" uid="uid://wu0ag1mpg4ci" path="res://sand.tres" id="1_tumq0"]
 [ext_resource type="PackedScene" uid="uid://capm564lavwm3" path="res://USETHISassets/helmet_outline.tscn" id="2_oqgf2"]
 [ext_resource type="Material" uid="uid://dr1sq457ec5lx" path="res://Resources/rock_shader.tres" id="3_qxfql"]
 [ext_resource type="PackedScene" uid="uid://c0nmosye046tt" path="res://Prefabs/LevelAssets/grass_large.tscn" id="3_wqkje"]
