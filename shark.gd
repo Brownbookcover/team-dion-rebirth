@@ -41,7 +41,9 @@ func _physics_process(delta: float) -> void:
 	var direction = next_path_position - global_position
 
 	velocity = direction.normalized() * shark_move_speed
-
+	print(distance_between)
+	if distance_between < 15 and !player.playerSafe:
+		kill_player()
 	#if direction.length_squared() > 0.001:
 		#var temp_transform = global_transform.looking_at(
 			#global_position + direction.normalized(), 
@@ -63,8 +65,9 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body.is_in_group("player") and !player.playerSafe:
-		player_killed = true
-		%killplayer.play()
-		jumpscare_image.visible = true
+func kill_player():
+	print("You Died")
+	player_killed = true
+	%killplayer.play()
+	get_tree().paused = true
+	#jumpscare_image.visible = true
