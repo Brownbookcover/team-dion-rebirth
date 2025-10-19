@@ -64,7 +64,7 @@ noise = SubResource("FastNoiseLite_vwpy5")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nmvv5"]
 transparency = 1
 cull_mode = 2
-albedo_color = Color(0.6705549, 1, 0.78462154, 0.41568628)
+albedo_color = Color(0.66999996, 1, 0.78550005, 0.0627451)
 roughness_texture = SubResource("NoiseTexture2D_wqnm5")
 disable_receive_shadows = true
 
