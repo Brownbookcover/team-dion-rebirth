@@ -25,7 +25,7 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	var distance_between = (player.global_position - global_position).length()
-	if distance_between < 30 and !player.playerSafe:
+	if distance_between < 100 and !player.playerSafe:
 		hunting_player = true
 	elif player.playerSafe:
 		hunting_player = false
