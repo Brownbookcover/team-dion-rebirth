@@ -2,15 +2,18 @@ extends CharacterBody3D
 
 @export var shark_move_speed := 5
 @export var agent_shark: NavigationAgent3D
+@export var nav_region: NavigationRegion3D
 @export var jumpscare_image: Sprite2D
 var player: CharacterBody3D
 
 var hunting_player = false
-var move_direction: Vector3
+var random_position: Vector3
 var wander_time: float
 
 func randomize_wander():
-	move_direction = Vector3(randf_range(-1,1), 0, randf_range(-1,1)).normalized()
+	var navigation_map_rid = nav_region.get_navigation_map()
+	random_position = NavigationServer3D.map_get_random_point(navigation_map_rid, 1, true) 
+	agent_shark.target_position = random_position
 	wander_time = randf_range(1,3)
 
 
@@ -33,10 +36,12 @@ func _physics_process(delta: float) -> void:
 		var direction = agent_shark.get_next_path_position() - position
 		velocity = direction.normalized() * shark_move_speed
 	else:
-		velocity = move_direction * shark_move_speed
+		var direction = agent_shark.get_next_path_position() - position
+		velocity = direction.normalized() * shark_move_speed
+	print(agent_shark.target_position)
 	move_and_slide()
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body.is_in_group("player"):
+	if body.is_in_group("player") and !player.playerSafe:
 		jumpscare_image.visible = true
