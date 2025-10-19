@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://wluy2khqegye"]
+[gd_scene load_steps=22 format=4 uid="uid://wluy2khqegye"]
 
 [ext_resource type="Shader" uid="uid://ct44mm88587q8" path="res://sand.tres" id="1_tumq0"]
 [ext_resource type="PackedScene" uid="uid://capm564lavwm3" path="res://USETHISassets/helmet_outline.tscn" id="2_oqgf2"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bi1dkuufhqmpl" path="res://underwater_art/crate.blend" id="8_754fn"]
 [ext_resource type="PackedScene" uid="uid://n4ff4a345yos" path="res://USETHISassets/nose.tscn" id="9_bvt00"]
 [ext_resource type="PackedScene" uid="uid://bp013ucuskf7a" path="res://Scenes/area1.tscn" id="11_qxfql"]
+[ext_resource type="PackedScene" uid="uid://drucq3s7ov0qm" path="res://USETHISassets/fish.tscn" id="12_ha31o"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k5f4k"]
 render_priority = 0
@@ -199,3 +200,6 @@ transform = Transform3D(-0.19028376, 0.24253833, -0.95129776, -0.11908958, 0.956
 
 [node name="grass_large4" parent="." instance=ExtResource("3_wqkje")]
 transform = Transform3D(0.5079176, -0.062302783, 0.85914963, 0.031706277, 0.9980573, 0.053631604, -0.86082196, 0, 0.50890625, -54.441063, -29.68108, 4.095826)
+
+[node name="Fish" parent="." instance=ExtResource("12_ha31o")]
+transform = Transform3D(-0.19644243, 0, -0.98051536, 0, 1, 0, 0.98051536, 0, -0.19644243, -35.562656, -25.333805, -4.412681)
