@@ -1,4 +1,4 @@
-
+@tool
 extends Node3D
 
 var env
@@ -6,7 +6,7 @@ var sun
 var elapsed = 0
 var helmet_position = Vector3.ZERO
 var helmet_width = 0.5
-@export var depth = 0.1
+@export_range(-1.0, 1.0, 0.01) var depth: float = 0.1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
