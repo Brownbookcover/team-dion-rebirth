@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://e7tmn0b0haaw"]
+[gd_scene load_steps=10 format=3 uid="uid://e7tmn0b0ho0w"]
 
 [ext_resource type="PackedScene" uid="uid://b435oqniqce3h" path="res://Prefabs/Player/player.tscn" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://d1ltfpggjtx13" path="res://chica.png" id="2_0xm2m"]
@@ -33,9 +33,8 @@ texture = ExtResource("2_0xm2m")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.09426473, 0.9955472, 0, -0.9955472, 0.09426473, 0, 25.46167, 0)
 
-[node name="Shark" parent="." node_paths=PackedStringArray("nav_region", "jumpscare_image") instance=ExtResource("3_h2yge")]
+[node name="Shark" parent="." node_paths=PackedStringArray("jumpscare_image") instance=ExtResource("3_h2yge")]
 transform = Transform3D(-0.9551286, 0, -0.29619148, 0, 1, 0, 0.29619148, 0, -0.9551286, -7.8101006, 1.9432268, -26.179462)
-nav_region = NodePath("../NavigationRegion3D")
 jumpscare_image = NodePath("../Chica")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
