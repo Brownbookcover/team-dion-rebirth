@@ -1,10 +1,23 @@
-[gd_scene load_steps=11 format=4 uid="uid://dujj11j6fv3d1"]
+[gd_scene load_steps=12 format=4 uid="uid://capm564lavwm3"]
 
-[ext_resource type="PackedScene" uid="uid://faiuy4jqk6e0" path="res://underwater_art/helmet.blend" id="1_3mmgx"]
-[ext_resource type="Texture2D" uid="uid://bmqbr52fkv31m" path="res://underwater_art/helment_map.png" id="2_vwpy5"]
+[ext_resource type="PackedScene" uid="uid://faiuy4jqk6e0" path="res://underwater_art/helmet.blend" id="1_oa8f1"]
+[ext_resource type="Texture2D" uid="uid://bmqbr52fkv31m" path="res://underwater_art/helment_map.png" id="2_7bie5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oa8f1"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.7864583, 0.77652526, 0, 1)
+grow = true
+grow_amount = 0.1
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wqnm5"]
 resource_name = "Material"
+next_pass = SubResource("StandardMaterial3D_oa8f1")
 cull_mode = 2
 shading_mode = 2
 diffuse_mode = 2
@@ -12,12 +25,15 @@ disable_fog = true
 albedo_color = Color(0.57, 0.44830498, 0.2223, 1)
 metallic = 1.0
 metallic_specular = 0.25
-metallic_texture = ExtResource("2_vwpy5")
+metallic_texture = ExtResource("2_7bie5")
 roughness = 0.78
-roughness_texture = ExtResource("2_vwpy5")
+roughness_texture = ExtResource("2_7bie5")
 roughness_texture_channel = 1
 disable_receive_shadows = true
+stencil_mode = 1
 stencil_flags = 2
+stencil_color = Color(0.7864583, 0.77652526, 0, 1)
+stencil_outline_thickness = 0.1
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_nmvv5"]
 _surfaces = [{
@@ -98,7 +114,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_rf1wn")
 
-[node name="helmet2" instance=ExtResource("1_3mmgx")]
+[node name="helmet2" instance=ExtResource("1_oa8f1")]
 
 [node name="helmet" parent="." index="0"]
 layers = 2
