@@ -11,9 +11,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	elapsed += delta
-	basis.y.z = sin(elapsed) * 0.1
-	basis.x.y = sin(elapsed) * 0.1
-	basis.z.x = sin(elapsed) * 0.1
+	# basis.y.z = sin(elapsed) * 0.1
+	# basis.x.y = sin(elapsed) * 0.1
+	# basis.z.x = sin(elapsed) * 0.1
 	
 	position.x += sin(elapsed) * 0.005
 	position.z += sin(elapsed) * 0.001
