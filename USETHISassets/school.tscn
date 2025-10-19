@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3kdpkcm0rkq4"]
+
+[ext_resource type="PackedScene" uid="uid://drucq3s7ov0qm" path="res://USETHISassets/fish.tscn" id="1_aa4mn"]
+
+[node name="School" type="Node3D"]
+
+[node name="Fish" parent="." instance=ExtResource("1_aa4mn")]
+
+[node name="Fish2" parent="." instance=ExtResource("1_aa4mn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0807769, -0.44860458)
+
+[node name="Fish3" parent="." instance=ExtResource("1_aa4mn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5995188, 1.3826268, 0.9548824)
+
+[node name="Fish4" parent="." instance=ExtResource("1_aa4mn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1583939, 0.5423579, 0)
+
+[node name="Fish5" parent="." instance=ExtResource("1_aa4mn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3292058, 0.2603191, -2.242661)
+
+[node name="Fish6" parent="." instance=ExtResource("1_aa4mn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3292058, 1.3410962, -2.6912656)
+
+[node name="Fish7" parent="." instance=ExtResource("1_aa4mn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.729687, 1.642946, -1.2877786)
+
+[node name="Fish8" parent="." instance=ExtResource("1_aa4mn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4876, 0.80267704, -2.242661)
+
+[node name="Fish9" parent="." instance=ExtResource("1_aa4mn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2500322, -0.22947586, -3.2804308)
+
+[node name="Fish10" parent="." instance=ExtResource("1_aa4mn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2500322, 0.8513012, -3.7290354)
+
+[node name="Fish11" parent="." instance=ExtResource("1_aa4mn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.849551, 1.153151, -2.3255484)
+
+[node name="Fish12" parent="." instance=ExtResource("1_aa4mn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0916381, 0.31288207, -3.2804308)
