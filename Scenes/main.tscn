@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://e7tmn0b0ho0w"]
+[gd_scene load_steps=11 format=3 uid="uid://e7tmn0b0ho0w"]
 
 [ext_resource type="PackedScene" uid="uid://tni8jygdmkl2" path="res://ocean_env.tscn" id="1_8gbba"]
+[ext_resource type="PackedScene" uid="uid://capm564lavwm3" path="res://USETHISassets/helmet_outline.tscn" id="2_6bp64"]
 [ext_resource type="PackedScene" uid="uid://b435oqniqce3h" path="res://Prefabs/Player/player.tscn" id="2_jjvhh"]
 [ext_resource type="Texture2D" uid="uid://d1ltfpggjtx13" path="res://chica.png" id="3_kry3j"]
 [ext_resource type="Script" uid="uid://cd3mqiqyboymw" path="res://Scenes/ocean_manager.gd" id="4_jjvhh"]
@@ -38,9 +39,12 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.016212702, 0)
 depth = 1.41
 
+[node name="HelmetOutline" parent="." instance=ExtResource("2_6bp64")]
+transform = Transform3D(0.097452015, 7.825655e-09, -2.4980998, 1.418638, 2.0577662, 0.055341735, 2.0562024, -1.4197167, 0.0802134, -19.213957, 37.855614, 432.42538)
+
 [node name="Player" parent="." instance=ExtResource("2_jjvhh")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.22739, 39.092724, 463.22818)
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -15.128689, 80.298836, 497.861)
 
 [node name="oceanDust" type="GPUParticles3D" parent="Player"]
 unique_name_in_owner = true
@@ -65,4 +69,4 @@ helmet_offset = Vector3(0.005, 0, -0.345)
 transform = Transform3D(0.08115567, 0, 0.9967014, 0, 1, 0, -0.9967014, 0, 0.08115567, 0, -35.642, 134.11261)
 
 [node name="Lighthouse" parent="." instance=ExtResource("6_21xkr")]
-transform = Transform3D(0.45920777, 0, 0.8883289, 0, 1, 0, -0.8883289, 0, 0.45920777, 0, 99.55216, -76.2487)
+transform = Transform3D(0.45920777, 0, 0.8883289, 0, 1, 0, -0.8883289, 0, 0.45920777, -6.6425476, 94.90275, -365.9185)

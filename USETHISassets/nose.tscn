@@ -1,6 +1,6 @@
-[gd_scene load_steps=12 format=4 uid="uid://n4ff4a345yos"]
+[gd_scene load_steps=13 format=4 uid="uid://n4ff4a345yos"]
 
-[ext_resource type="Script" uid="uid://bsobha1gtyi4q" path="res://USETHISassets/flashing_lights.gd" id="1_diqnn"]
+[ext_resource type="Script" path="res://USETHISassets/flashing_lights.gd" id="1_diqnn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_41k2m"]
 resource_name = "BODY"
@@ -123,6 +123,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_m1lvx")
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_diqnn"]
+points = PackedVector3Array(-0.24021265, -0.6118545, 0.8105428, -0.09955215, -0.078325376, -0.96206516, -0.13345666, -0.22410463, -0.92156315, 1.3234922, -0.1470816, 0.032002307, 0.2550525, -1.8488481, -0.17984293, -0.97224414, -0.026219686, 0.10477601, 0.3275801, -0.034790542, 0.9273629, 0.25499266, -1.6008499, 0.5610461, -0.45442024, -1.5688741, -0.038831428, 1.2603333, -0.033316072, -0.39791372, 0.36029616, -1.5985521, -0.5308487, 1.0671611, -0.824555, 0.31414342, -0.5531677, -0.7195803, -0.60085, 0.71263194, -1.5640073, -0.14429063, -0.71590257, -0.029456835, 0.6805281, -0.3432545, -1.5637075, 0.34810266, -0.90363795, -0.022940619, -0.40257892, -0.16681601, -1.5977633, -0.4952973, 0.400704, -0.028160308, -0.90520257, 1.2683934, -0.02646394, 0.39375222, 1.111233, -0.7164355, -0.3240727, 0.6402117, -1.5964428, 0.2768385, -0.06369788, -1.852231, 0.13796218, -0.6962823, -0.8600112, 0.31324497, -0.39482158, -0.024384622, -0.9087123, -0.13839708, -0.033465672, 0.96473056, -0.7691186, -0.8243418, -0.038661152, 0.0072292597, -0.78850955, -0.8188523, 0.4286869, -1.558498, 0.51983917, -0.13414654, -1.5670286, 0.5269652, -0.6921591, -0.86042297, -0.3188777, 1.1330903, -0.82515603, -0.0035579205)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mic4u"]
 resource_name = "Material.006"
 cull_mode = 2
@@ -219,6 +222,11 @@ transform = Transform3D(4.3890343, -7.593042, -1.3251258, -2.2188952, 0.21566169
 mesh = SubResource("ArrayMesh_koib7")
 skeleton = NodePath("")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="NOSE_001"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NOSE_001/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_diqnn")
+
 [node name="Circle_002" type="MeshInstance3D" parent="."]
 transform = Transform3D(-7.7265644, 1.085151, 1.3965087, 1.5993011, 1.6152067, 7.593478, 0.7549989, 7.6838207, -1.7934372, -7.4056377, 7.79552, -4.300054)
 mesh = SubResource("ArrayMesh_yqmij")
@@ -230,7 +238,7 @@ light_color = Color(1, 0.53226745, 0, 1)
 light_energy = 10.0
 omni_range = 7.29
 script = ExtResource("1_diqnn")
-elapsed = 4.0
+elapsed = 0.6145231111111104
 duration = 1.5
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
@@ -239,5 +247,5 @@ light_color = Color(1, 0.11651367, 0.07173234, 1)
 light_energy = 10.0
 omni_range = 7.29
 script = ExtResource("1_diqnn")
-elapsed = 3.5
+elapsed = 0.37296733333333304
 duration = 0.5
