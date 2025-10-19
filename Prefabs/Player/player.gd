@@ -10,6 +10,8 @@ extends CharacterBody3D
 @export var stats: PlayerStats
 var playerSafe: bool = false
 
+var dead: bool = false
+
 var hovering_pickable: Pickup = null
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -23,8 +25,19 @@ func _unhandled_input(event: InputEvent) -> void:
 			camera.rotate_x(-event.relative.y * 0.01 / stats.camera_impedance)
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(stats.camera_min_pitch), deg_to_rad(stats.camera_max_pitch))
 
-
 func _physics_process(delta: float) -> void:
+	if dead:
+		$DeathFade.color = Color($DeathFade.color, $DeathFade.color.a + delta)
+		
+		if $DeathFade.color.a8 >= 255.0:
+			await get_tree().create_timer(0.5).timeout
+			get_tree().reload_current_scene()
+		return
+	
+	if $Pivot/Camera3D/HelmetPivot/Gauge.level_float <= 0.0:
+		die(Color.BLACK)
+		return
+	
 	_handle_pickup()
 	
 	if not is_on_floor():
@@ -60,6 +73,7 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("player_dash") and global_position.y <= 0:
 		velocity = -pivot.transform.basis.z * stats.dash_vel
+		$Pivot/Camera3D/HelmetPivot/Gauge.level_float -= 0.2
 	
 	move_and_slide()
 
@@ -87,6 +101,11 @@ func _handle_pickup():
 		
 		if pickup_name == "canister":
 			$Pivot/Camera3D/HelmetPivot/Gauge.level_float = 1.0
+
+
+func die(color: Color):
+	$DeathFade.color = Color(color, 0.0)
+	dead = true
 
 
 func _equip_helmet():
