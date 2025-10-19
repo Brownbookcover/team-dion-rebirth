@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://e7tmn0b0ho0w"]
+[gd_scene load_steps=10 format=3 uid="uid://e7tmn0b0ho0w"]
 
 [ext_resource type="PackedScene" uid="uid://b435oqniqce3h" path="res://Prefabs/Player/player.tscn" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://d1ltfpggjtx13" path="res://chica.png" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://cn0ymmanhkmko" path="res://shark.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://wnpatkw8icfa" path="res://Prefabs/LevelAssets/grass.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://bk3vymad8my5u" path="res://Scenes/OxygenUI.tscn" id="5_lquwl"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_h2yge"]
 vertices = PackedVector3Array(-49.5, 1, -49.5, -49.5, 1, 49.5, 49.5, 1, 49.5, 49.5, 1, -49.5)
@@ -13,6 +15,9 @@ size = Vector3(100, 1, 100)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ig7tw"]
 size = Vector3(100, 1, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lquwl"]
+size = Vector3(1.7661133, 3.5240479, 2.6342163)
 
 [node name="Node3D" type="Node3D"]
 
@@ -48,3 +53,17 @@ shape = SubResource("BoxShape3D_ig7tw")
 visible = false
 position = Vector2(553, 397)
 texture = ExtResource("2_0xm2m")
+
+[node name="Grass" parent="." instance=ExtResource("4_1bvp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9425073, 3.96626)
+
+[node name="Area3D" type="Area3D" parent="Grass"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Grass/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38305664, 0.6692505, 0.37417603)
+shape = SubResource("BoxShape3D_lquwl")
+
+[node name="OxygenUi" parent="." instance=ExtResource("5_lquwl")]
+
+[connection signal="body_entered" from="Grass/Area3D" to="Player" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Grass/Area3D" to="Player" method="_on_area_3d_body_exited"]

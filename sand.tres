@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=31 format=3 uid="uid://ct44mm88587q8"]
+[gd_resource type="VisualShader" load_steps=31 format=3 uid="uid://wu0ag1mpg4ci"]
 
 [ext_resource type="Texture2D" uid="uid://dsfirvaygnclw" path="res://underwater_art/coast_sand_03_diff_1k.jpg" id="1_pxh40"]
 [ext_resource type="Texture2D" uid="uid://b8r0tklbj8mra" path="res://underwater_art/coast_sand_03_nor_dx_1k.jpg" id="2_wqn5u"]

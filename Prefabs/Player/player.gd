@@ -4,6 +4,7 @@ extends CharacterBody3D
 @onready var camera := $Pivot/Camera3D
 
 @export var stats: PlayerStats
+var playerSafe: bool = false
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -47,3 +48,13 @@ func _physics_process(delta: float) -> void:
 	velocity.z = new_move_vel.z
 	
 	move_and_slide()
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body == self:
+		playerSafe = true
+
+
+func _on_area_3d_body_exited(body: Node3D) -> void:
+	if body == self:
+		playerSafe = false

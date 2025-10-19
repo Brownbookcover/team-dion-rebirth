@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://bk3vymad8my5u"]
+
+[ext_resource type="Script" uid="uid://bq1ns8jbcnq17" path="res://Scenes/oxygen_ui.gd" id="1_3tq4u"]
+
+[node name="OxygenUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3tq4u")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1039.0
+offset_top = 11.0
+offset_right = 1153.0
+offset_bottom = 45.0
+text = "Oxygen: 100
+"
