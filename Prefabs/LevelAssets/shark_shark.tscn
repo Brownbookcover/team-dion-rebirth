@@ -10,7 +10,7 @@ albedo_color = Color(0.654636, 1, 0.86712044, 1)
 albedo_texture = ExtResource("1_lrm40")
 emission_enabled = true
 emission = Color(0.5833334, 0.09698491, 0.54215604, 1)
-emission_energy_multiplier = 0.05
+emission_energy_multiplier = 0.01
 normal_enabled = true
 normal_scale = 6.29
 normal_texture = ExtResource("2_lrm40")
@@ -100,7 +100,7 @@ shadow_mesh = SubResource("ArrayMesh_ca2k6")
 [node name="shark" type="Node3D" parent="."]
 
 [node name="goblin_shark" type="MeshInstance3D" parent="shark"]
-transform = Transform3D(4.9999022, -4.28102e-12, -0.031265195, -0.031265195, -1.3666451e-09, -4.9999022, -4.28102e-12, 5, -1.3666451e-09, 0.58255583, 0, 0.11651144)
+transform = Transform3D(4.9999022, -4.28102e-12, -0.031265195, -0.031265195, -1.3666451e-09, -4.9999022, -4.28102e-12, 5, -1.3666451e-09, 1.0652995, 0, 0.21306005)
 mesh = SubResource("ArrayMesh_iacjg")
 skeleton = NodePath("")
 script = ExtResource("1_iacjg")
