@@ -41,9 +41,11 @@ points = PackedVector3Array(277.86768, 59.495506, -3.327713, 208.87965, 54.61773
 [node name="Rock" type="Node3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.9756189, 0.2194716, 0, -0.2194716, 0.9756189, 0, 0, 0, 1, -225.26767, 22.130608, 70.15217)
+transform = Transform3D(0.09756189, 0.02194716, 0, -0.02194716, 0.09756189, 0, 0, 0, 0.1, -23.931622, 2.1440573, 4.41193)
 mesh = SubResource("ArrayMesh_u518l")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.9756189, 0.2194716, 0, -0.2194716, 0.9756189, 0, 0, 0, 1, -225.26767, 22.130608, 70.15217)
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+transform = Transform3D(0.99999994, -1.4901161e-08, 0, 1.4901161e-08, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_u518l")

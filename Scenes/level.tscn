@@ -145,14 +145,11 @@ mesh = SubResource("BoxMesh_81xng")
 [node name="grass_large" parent="." instance=ExtResource("3_wqkje")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.218952, -31.687172, -23.780636)
 
-[node name="grass_medium" parent="." instance=ExtResource("4_0f350")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.262007, -35.517258, -55.01417)
-
 [node name="grass_medium2" parent="." instance=ExtResource("4_0f350")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.7422, -36.182266, -43.5585)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.7422, -36.182266, 40.007175)
 
 [node name="grass_small" parent="." instance=ExtResource("5_8c0lf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.662575, -30.712927, -7.664544)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.662575, -30.531311, -7.664544)
 
 [node name="grass_large2" parent="." instance=ExtResource("3_wqkje")]
 transform = Transform3D(0.63584924, 0, 0.7718133, 0, 1, 0, -0.7718133, 0, 0.63584924, -11.251689, -30.465483, 6.355379)
@@ -196,6 +193,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125.141266, 60.70849, 1.5001
 transform = Transform3D(0.88691705, 0.4573789, 0.06467557, -0.42856976, 0.86700225, -0.25423428, -0.1723553, 0.19776665, 0.9649777, -0.37300873, -0.87397766, 0.071430326)
 
 [node name="plane_nose" parent="." instance=ExtResource("9_bvt00")]
-transform = Transform3D(0.98609775, 0.16616641, 0, -0.16616641, 0.98609775, 0, 0, 0, 1, -36.45342, -29.18115, 2.3799996)
+transform = Transform3D(-0.19028376, 0.24253833, -0.95129776, -0.11908958, 0.9561438, 0.26759478, 0.97447926, 0.16420859, -0.15305483, -50.643726, -28.113142, 21.789331)
 
 [node name="Area1" parent="." instance=ExtResource("11_qxfql")]
+
+[node name="grass_large4" parent="." instance=ExtResource("3_wqkje")]
+transform = Transform3D(0.5079176, -0.062302783, 0.85914963, 0.031706277, 0.9980573, 0.053631604, -0.86082196, 0, 0.50890625, -54.441063, -29.68108, 4.095826)

@@ -115,3 +115,8 @@ light_volumetric_fog_energy = 0.0
 light_size = 0.435
 light_bake_mode = 0
 shadow_bias = 1.493
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="2"]
+transform = Transform3D(-0.104563124, 0, -0.9945183, 0, 1, 0, 0.9945183, 0, -0.104563124, 1.60203, 0, 0)
+spot_range = 47.28
+spot_angle = 45.48

@@ -1,3 +1,23 @@
-[gd_scene format=3 uid="uid://bp013ucuskf7a"]
+[gd_scene load_steps=3 format=3 uid="uid://bp013ucuskf7a"]
+
+[ext_resource type="PackedScene" uid="uid://b1l21a3df1edj" path="res://USETHISassets/rock.tscn" id="1_nd7mt"]
+[ext_resource type="ArrayMesh" uid="uid://cuuusmww6tsv" path="res://underwater_art/beachterrain.obj" id="2_0ghc4"]
 
 [node name="Area1" type="Node3D"]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
+visible = false
+mesh = ExtResource("2_0ghc4")
+
+[node name="Rock" parent="." instance=ExtResource("1_nd7mt")]
+transform = Transform3D(-0.20348793, 0.20089653, -3.2821639, -1.8919646, 0.36147562, 0.45631376, 0.53526366, 1.3540596, 0.3651455, -69.95129, -32.20355, -31.11154)
+
+[node name="Rock2" parent="." instance=ExtResource("1_nd7mt")]
+transform = Transform3D(-0.13274215, 0.41230366, -2.8929355, -2.902757, 0.30996025, 0.4214503, 0.8684875, 1.0990015, 0.96645474, -69.95129, -23.934616, 44.825226)
+
+[node name="Rock3" parent="." instance=ExtResource("1_nd7mt")]
+transform = Transform3D(-0.24235256, 3.5497892, -10.959876, -5.1547675, -3.7118325, -0.9914773, -2.007286, 9.103502, 3.8693967, -40.94629, -42.803593, 38.941998)
+
+[node name="Rock4" parent="." instance=ExtResource("1_nd7mt")]
+transform = Transform3D(-1.8420446, 7.6186748, 6.9800076, -5.154767, -3.7118323, -0.9914773, 0.8335489, -6.1180515, 9.293578, -45.53163, -42.803593, -34.078827)

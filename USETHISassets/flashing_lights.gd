@@ -1,7 +1,8 @@
 @tool
 extends Node3D
 
-var elapsed = 0.0
+@export var elapsed = 0.0
+@export var duration = 1.0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -10,7 +11,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	elapsed += delta
-	if elapsed > 1:
+	if elapsed > duration:
 		elapsed = 0
 		if visible == true:
 			hide()
