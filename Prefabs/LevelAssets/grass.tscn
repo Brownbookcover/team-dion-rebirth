@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://wnpatkw8icfa"]
+[gd_scene load_steps=6 format=4 uid="uid://wnpatkw8icfa"]
 
 [ext_resource type="Script" uid="uid://15y3be0pi4g5" path="res://Prefabs/LevelAssets/grass_sway.gd" id="1_cyr6g"]
 
@@ -36,12 +36,26 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_cyr6g")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_cyr6g"]
+size = Vector3(1.7661133, 3.5240479, 2.6342163)
+
 [node name="Grass" type="Node3D"]
 
 [node name="grass" type="Node3D" parent="."]
 
 [node name="Plane_003" type="MeshInstance3D" parent="grass"]
-transform = Transform3D(0.15608388, -0.7055338, -0.032511156, -0.032511156, -0.10528488, -1.8238378, 0.98595554, -0.032511156, 0.1549704, 0.108588696, 0.7400296, 0.44328043)
+transform = Transform3D(0.15608388, -0.7055338, -0.061186664, -0.061186664, -0.10528488, -1.8238378, 0.98595554, -0.061186664, 0.1549704, 0.108588696, 0.7400296, 0.44328043)
 mesh = SubResource("ArrayMesh_hnr3o")
 skeleton = NodePath("")
 script = ExtResource("1_cyr6g")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38305664, 0.6692505, 0.37417603)
+shape = SubResource("BoxShape3D_cyr6g")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33193374, 0, 0.45546603)
+radius = 2.45
+vertices = PackedVector3Array(-0.70678186, 0, 1.465154, 1.1223993, 0, 1.9167817, 0.11787701, 0, 1.3559549)
