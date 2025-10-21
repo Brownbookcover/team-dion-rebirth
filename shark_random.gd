@@ -11,7 +11,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	elapsed += delta
 	if elapsed > trigger:
-		trigger =  randf_range(2.0, 10.0)
+		trigger =  randf_range(2.0, 4.0)
 		elapsed = 0.0
 		play()
-		print(play)
+		# print(play)

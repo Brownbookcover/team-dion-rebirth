@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://e7tmn0b0ho0w"]
+[gd_scene load_steps=37 format=4 uid="uid://e7tmn0b0ho0w"]
 
 [ext_resource type="PackedScene" uid="uid://tni8jygdmkl2" path="res://ocean_env.tscn" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://capm564lavwm3" path="res://USETHISassets/helmet_outline.tscn" id="2_6bp64"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://cunsorq0lpt03" path="res://sound/plane.wav" id="13_fdnlq"]
 [ext_resource type="PackedScene" uid="uid://covgya4w2uarj" path="res://Scenes/canister.tscn" id="15_wsu2k"]
 [ext_resource type="Script" uid="uid://c3acv47pxj6s8" path="res://Scenes/grass_linker.gd" id="16_k12tt"]
+[ext_resource type="Script" uid="uid://vgd44cbrmq5h" path="res://Scenes/beach_win_area.gd" id="17_h1bgf"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8gbba"]
 lifetime_randomness = 0.11
@@ -370,6 +371,9 @@ _data = {
 &"static": SubResource("Animation_olx5d")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_k12tt"]
+size = Vector3(63.618, 10.495, 30.614)
+
 [node name="Main" type="Node3D"]
 
 [node name="OceanEnv" parent="." instance=ExtResource("1_8gbba")]
@@ -461,3 +465,11 @@ transform = Transform3D(0.49610287, -0.113585226, -0.8608025, 0.67620754, 0.6724
 
 [node name="GrassLinker" type="Node" parent="."]
 script = ExtResource("16_k12tt")
+
+[node name="beach_win_area" type="Area3D" parent="."]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, -21.590769, 8.31649, -137.11798)
+script = ExtResource("17_h1bgf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="beach_win_area" groups=["beach"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.75409, 0, -4.18985)
+shape = SubResource("BoxShape3D_k12tt")

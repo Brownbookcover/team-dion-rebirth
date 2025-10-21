@@ -115,7 +115,7 @@ func _equip_helmet():
 
 
 func _unequip_helmet():
-	helmet_model.visible = true
+	helmet_model.visible = false
 	$Pivot/Camera3D/HelmetPivot/Gauge.start_oxygen=false
 	stats = load("res://Resources/PlayerStats/default_player_stats.tres")
 
@@ -128,3 +128,8 @@ func _on_grass_body_entered(body: Node3D) -> void:
 func _on_grass_body_exited(body: Node3D) -> void:
 	if body == self:
 		playerSafe = false
+
+func _on_beach_body_entered(body: Node3D) -> void:
+	if body == self:
+		_unequip_helmet()
+		# die(Color.WHITE)

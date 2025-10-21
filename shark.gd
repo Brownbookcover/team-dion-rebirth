@@ -66,10 +66,11 @@ func _physics_process(delta: float) -> void:
 
 
 func kill_player():
-	player.die(Color.DARK_RED)
 	if not player_killed:
+		player.die(Color.DARK_RED)
+		%killplayer.play()
 		print("You Died")
 	player_killed = true
-	%killplayer.play()
+
 	# get_tree().paused = true
 	#jumpscare_image.visible = true
