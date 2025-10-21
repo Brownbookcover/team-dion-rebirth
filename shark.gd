@@ -41,7 +41,7 @@ func _physics_process(delta: float) -> void:
 	var direction = next_path_position - global_position
 
 	velocity = direction.normalized() * shark_move_speed
-	print(distance_between)
+	# print(distance_between)
 	if distance_between < 5 and !player.playerSafe:
 		kill_player()
 	#if direction.length_squared() > 0.001:
@@ -67,8 +67,9 @@ func _physics_process(delta: float) -> void:
 
 func kill_player():
 	player.die(Color.DARK_RED)
-	print("You Died")
+	if not player_killed:
+		print("You Died")
 	player_killed = true
 	%killplayer.play()
-	get_tree().paused = true
+	# get_tree().paused = true
 	#jumpscare_image.visible = true

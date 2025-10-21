@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cj73phkjp1bpx"]
+[gd_scene load_steps=3 format=3 uid="uid://cj73phkjp1bpx"]
 
 [ext_resource type="PackedScene" uid="uid://wnpatkw8icfa" path="res://Prefabs/LevelAssets/grass.tscn" id="1_pjpy7"]
 
-[node name="grass_small" type="Node3D"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_pjpy7"]
+radius = 2.9032698
+
+[node name="grass_small" type="Area3D" groups=["grass"]]
 
 [node name="Grass" parent="." instance=ExtResource("1_pjpy7")]
 
@@ -14,3 +17,9 @@ transform = Transform3D(0.87159055, 0, -0.49023455, 0, 1, 0, 0.49023455, 0, 0.87
 
 [node name="Grass4" parent="." instance=ExtResource("1_pjpy7")]
 transform = Transform3D(0.7522249, 0.20509396, 0.6261743, -0.1576276, 0.9787423, -0.13121386, -0.6397744, 0, 0.7685628, 1.2044413, 0, 0.1208415)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_pjpy7")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="."]
+radius = 4.26

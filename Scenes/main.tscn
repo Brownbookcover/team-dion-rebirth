@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://e7tmn0b0ho0w"]
+[gd_scene load_steps=35 format=4 uid="uid://e7tmn0b0ho0w"]
 
 [ext_resource type="PackedScene" uid="uid://tni8jygdmkl2" path="res://ocean_env.tscn" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://capm564lavwm3" path="res://USETHISassets/helmet_outline.tscn" id="2_6bp64"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://bc84jqa5te55f" path="res://sound/above.wav" id="12_6iyac"]
 [ext_resource type="AudioStream" uid="uid://cunsorq0lpt03" path="res://sound/plane.wav" id="13_fdnlq"]
 [ext_resource type="PackedScene" uid="uid://covgya4w2uarj" path="res://Scenes/canister.tscn" id="15_wsu2k"]
+[ext_resource type="Script" uid="uid://c3acv47pxj6s8" path="res://Scenes/grass_linker.gd" id="16_k12tt"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8gbba"]
 lifetime_randomness = 0.11
@@ -457,3 +458,6 @@ transform = Transform3D(0.49610287, -0.113585226, -0.8608025, 0.67620754, 0.6724
 
 [node name="Canister3" parent="." instance=ExtResource("15_wsu2k")]
 transform = Transform3D(0.49610287, -0.113585226, -0.8608025, 0.67620754, 0.6724209, 0.30098814, 0.5446335, -0.73140204, 0.410397, -54.546833, -27.8426, 154.94753)
+
+[node name="GrassLinker" type="Node" parent="."]
+script = ExtResource("16_k12tt")

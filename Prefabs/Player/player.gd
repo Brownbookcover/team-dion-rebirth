@@ -120,11 +120,11 @@ func _unequip_helmet():
 	stats = load("res://Resources/PlayerStats/default_player_stats.tres")
 
 
-func _on_area_3d_body_entered(body: Node3D) -> void:
+func _on_grass_body_entered(body: Node3D) -> void:
+	# print("entered")
 	if body == self:
 		playerSafe = true
 
-
-func _on_area_3d_body_exited(body: Node3D) -> void:
+func _on_grass_body_exited(body: Node3D) -> void:
 	if body == self:
 		playerSafe = false
