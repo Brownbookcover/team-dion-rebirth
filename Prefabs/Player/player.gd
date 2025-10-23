@@ -93,14 +93,17 @@ func _handle_pickup():
 	
 	if Input.is_action_just_pressed("pick_up") and hovering_pickable != null:
 		var pickup_name = hovering_pickable.pickup_name
-		hovering_pickable.get_parent().queue_free()
-		hovering_pickable = null
-		
-		if pickup_name == "helmet":
-			_equip_helmet()
-		
-		if pickup_name == "canister":
-			$Pivot/Camera3D/HelmetPivot/Gauge.level_float = 1.0
+		if pickup_name != "commentary":
+			hovering_pickable.get_parent().queue_free()
+			hovering_pickable = null
+			
+			if pickup_name == "helmet":
+				_equip_helmet()
+			
+			if pickup_name == "canister":
+				$Pivot/Camera3D/HelmetPivot/Gauge.level_float = 1.0
+		else:
+			hovering_pickable.get_parent().play()
 
 
 func die(color: Color):
