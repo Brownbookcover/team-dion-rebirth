@@ -113,6 +113,9 @@ func _handle_pickup():
 			%Gauge.paused = true
 			
 			%CommentaryProgBar.show()
+			
+			%aboveplayer.volume_db = -1000.0
+			%underwatersounds_player.volume_db = -1000.0
 
 func die(color: Color):
 	$DeathFade.color = Color(color, 0.0)
@@ -151,3 +154,6 @@ func _on_commentary_pause_timer_timeout() -> void:
 	%Gauge.paused = false
 	
 	%CommentaryProgBar.hide()
+		
+	%aboveplayer.volume_db = 0.0
+	%underwatersounds_player.volume_db = 0.0
