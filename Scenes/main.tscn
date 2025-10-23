@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://e7tmn0b0ho0w"]
+[gd_scene load_steps=44 format=4 uid="uid://e7tmn0b0ho0w"]
 
 [ext_resource type="PackedScene" uid="uid://tni8jygdmkl2" path="res://ocean_env.tscn" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://capm564lavwm3" path="res://USETHISassets/helmet_outline.tscn" id="2_6bp64"]
@@ -20,8 +20,10 @@
 [ext_resource type="Script" uid="uid://c3acv47pxj6s8" path="res://Scenes/grass_linker.gd" id="16_k12tt"]
 [ext_resource type="Script" uid="uid://vgd44cbrmq5h" path="res://Scenes/beach_win_area.gd" id="17_h1bgf"]
 [ext_resource type="PackedScene" uid="uid://cyfj2crpj1505" path="res://Prefabs/LevelAssets/commentary.tscn" id="18_b3802"]
-[ext_resource type="AudioStream" uid="uid://bsko2p4861k7v" path="res://sound/commentary/ocean_commnetary2.mp3" id="21_pdsj5"]
+[ext_resource type="AudioStream" uid="uid://cc33kc06y5nob" path="res://sound/commentary/dion_commentary.mp3" id="19_ee4r6"]
 [ext_resource type="AudioStream" uid="uid://cem5p4bo8pa6y" path="res://sound/commentary/breathing_commentary.mp3" id="22_ee4r6"]
+[ext_resource type="AudioStream" uid="uid://bc0bmrdrf2pu" path="res://sound/commentary/mike_commentary.mp3" id="24_3pmx8"]
+[ext_resource type="AudioStream" uid="uid://xbh1107uelcm" path="res://sound/commentary/final_commentary.mp3" id="25_u50mg"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8gbba"]
 lifetime_randomness = 0.11
@@ -419,6 +421,7 @@ transform = Transform3D(0.45920777, 0, 0.8883289, 0, 1, 0, -0.8883289, 0, 0.4592
 
 [node name="OpeningManager" type="Node3D" parent="."]
 script = ExtResource("8_d1ilt")
+skip = false
 
 [node name="cam2" type="Camera3D" parent="OpeningManager"]
 unique_name_in_owner = true
@@ -480,19 +483,30 @@ shape = SubResource("BoxShape3D_k12tt")
 
 [node name="CommentaryPlayer" parent="." instance=ExtResource("18_b3802")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.776102, 70.01838, 415.3767)
-stream = ExtResource("15_hibaj")
+stream = ExtResource("19_ee4r6")
 volume_db = 10.0
-
-[node name="CommentaryPlayer2" parent="." instance=ExtResource("18_b3802")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.332006, 7.8171864, -130.46265)
-stream = ExtResource("21_pdsj5")
 
 [node name="CommentaryPlayer3" parent="." instance=ExtResource("18_b3802")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.721207, 95.75585, 464.31696)
 stream = ExtResource("15_pdsj5")
-volume_db = 20.0
+volume_db = 10.0
 
 [node name="CommentaryPlayer4" parent="." instance=ExtResource("18_b3802")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.895533, -41.03247, 337.76245)
 stream = ExtResource("22_ee4r6")
+volume_db = 10.0
+
+[node name="CommentaryPlayer5" parent="." instance=ExtResource("18_b3802")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -129.84851, -22.439007, 214.99818)
+stream = ExtResource("15_hibaj")
+volume_db = 10.0
+
+[node name="CommentaryPlayer" parent="CommentaryPlayer5" instance=ExtResource("18_b3802")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 182.89157, 5.1881638, -128.03014)
+stream = ExtResource("24_3pmx8")
+volume_db = 10.0
+
+[node name="CommentaryPlayer6" parent="." instance=ExtResource("18_b3802")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4530945, 11.0063, -159.085)
+stream = ExtResource("25_u50mg")
 volume_db = 10.0
