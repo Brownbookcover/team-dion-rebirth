@@ -5,6 +5,8 @@ extends Node3D
 var start_oxygen = false
 var time_passed = 0.0
 
+var paused = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -18,7 +20,8 @@ func _physics_process(delta: float) -> void:
 	if start_oxygen:
 		time_passed += delta
 		if time_passed >= 1.0:
-			level_float -= .005
+			if not paused:
+				level_float -= .005
 			if level_float < 0.0:
 				level_float = 0.0
 			time_passed = 0.0

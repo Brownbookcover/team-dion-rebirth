@@ -14,6 +14,8 @@ var dead: bool = false
 
 var hovering_pickable: Pickup = null
 
+var isCommentaryPlaying: bool = false
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -105,6 +107,10 @@ func _handle_pickup():
 		else:
 			hovering_pickable.get_parent().play()
 
+			%CommentaryPauseTimer.wait_time = hovering_pickable.get_parent().stream.get_length()
+			%CommentaryPauseTimer.start()
+			isCommentaryPlaying = true
+			%Gauge.paused = true
 
 func die(color: Color):
 	$DeathFade.color = Color(color, 0.0)
@@ -136,3 +142,8 @@ func _on_beach_body_entered(body: Node3D) -> void:
 	if body == self:
 		_unequip_helmet()
 		# die(Color.WHITE)
+
+
+func _on_commentary_pause_timer_timeout() -> void:
+	isCommentaryPlaying = false
+	%Gauge.paused = false
