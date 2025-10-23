@@ -111,6 +111,8 @@ func _handle_pickup():
 			%CommentaryPauseTimer.start()
 			isCommentaryPlaying = true
 			%Gauge.paused = true
+			
+			%CommentaryProgBar.show()
 
 func die(color: Color):
 	$DeathFade.color = Color(color, 0.0)
@@ -147,3 +149,5 @@ func _on_beach_body_entered(body: Node3D) -> void:
 func _on_commentary_pause_timer_timeout() -> void:
 	isCommentaryPlaying = false
 	%Gauge.paused = false
+	
+	%CommentaryProgBar.hide()
